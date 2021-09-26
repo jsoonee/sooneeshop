@@ -1,0 +1,76 @@
+.product {
+    padding: 5rem 0 5rem 0;
+}
+
+.pFlex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+
+.pHead {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4rem 0 4rem;
+}
+
+.headline h1:hover {
+    cursor: text;
+}
+
+.filter > li {
+    display: inline-block;
+    margin: 0 0 0 3rem;
+}
+
+.filter > li:hover {
+    cursor: pointer;
+}
+
+.active {
+    background: lightgray;
+}
+
+.pdts {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(auto-fill, minmax(360px, auto));
+    grid-gap: 2rem;
+    justify-content: center;
+    padding: 2rem 0 2rem 0;
+}
+
+.pdts li {
+    width: 100%;
+    height: auto;
+}
+
+.p1 {
+    margin: 1rem;
+}
+
+.product img {
+    width: 360px;
+}
+
+.off {
+    display: none;
+}
+
+.more {
+    border: 1px solid #000;
+    width: 80px;
+}
+
+.more:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .filter > li {
+        margin: 0 0 0 2rem;
+    }
+}

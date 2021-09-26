@@ -14,15 +14,19 @@
     max-width: 75rem;
     width: 100%;
     height: 100%;
-    background: lightgray;
 }
 
-.flexbox {
+.hFlex {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 100%;
+}
+
+.hFlex a {
+    text-decoration: none;
+    color: #000;
 }
 
 .logo {
@@ -32,11 +36,86 @@
 }
 
 .nav ul {
-    list-style: none;
     margin-right: 2rem;
 }
 
 .nav li {
     display: inline-block;
-    margin-left: 1rem;
+    margin: 0.2rem 0 0.2rem 2.5rem;
+    font-size: 1rem;
+}
+
+.nav li:hover {
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    max-width: 200px;
+    margin-left: -75px;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, .5);
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,.1);
+    font-size: 1.05rem;
+}
+
+.tooltip-text::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -7px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0,0,0,.1) transparent;
+}
+
+.nav li:hover .tooltip-text {
+    display: block;
+}
+
+.service {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.tt-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+}
+
+.call svg {
+    padding: 3px 5px 0 0;
+}
+
+.maIcon {
+    font-size: 1rem;
+}
+
+.mail svg {
+    margin: 6px 5px 0 0.6px;
+}
+
+@media screen and (max-width: 720px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav li {
+        margin-left: 1.5rem;
+        font-size: 0.9rem;
+    }
 }
