@@ -37,6 +37,7 @@
 
 .nav ul {
     margin-right: 2rem;
+    text-align: center;
 }
 
 .nav li {
@@ -57,9 +58,9 @@
 .tooltip-text {
     position: absolute;
     z-index: 1;
-    display: block;
+    display: none;
     max-width: 200px;
-    margin-left: -75px;
+    margin-left: -64px;
     margin-top: 15px;
     background: rgba(255, 255, 255, .5);
     color: #000;

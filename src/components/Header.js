@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { AiFillCustomerService, AiFillMail } from 'react-icons/ai';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeadset, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     return (
@@ -15,28 +16,29 @@ const Header = () => {
                     <div className="nav">
                         <ul>
                             <li className="contact">
-                                <span className="tooltip">Contact</span>
+                                <span className="tooltip">contact</span>
                                 <span className="tooltip-text">
                                     <div className="service">Customer Service</div>
                                     <div className="tt-flex call">
-                                        <div><AiFillCustomerService className="csIcon"/></div>
+                                        <div><FontAwesomeIcon icon={faHeadset}/></div>
                                         <div>080-000-0000</div>
                                     </div>
                                     <div className="tt-flex mail">
-                                        <div><AiFillMail className="maIcon"/></div>
-                                        <div>support@soonee.shop</div>
+                                        <div><FontAwesomeIcon icon={faEnvelope}/></div>
+                                        <div>support@sn.shop</div>
                                     </div>
                                 </span>
                             </li>
                             <li className="event">
-                                <span className="tooltip">Event</span>
-                                <span className="tooltip-text">GRAND OPEN<br/>20% 할인 쿠폰 증정</span>
+                                <span className="tooltip">event</span>
+                                <span className="tooltip-text eventText">GRAND OPEN<br/>20% 할인 쿠폰 증정</span>
                             </li>
                             <li>
-                                Cart
+                                <span className="cart">cart</span>
+                                <span className="qnt">0</span>
                             </li>
                             <li>
-                                Login
+                                login
                             </li>
                         </ul>
                     </div>

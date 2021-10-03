@@ -1,7 +1,7 @@
 import React from 'react';
 
-import capmain from '../images/capmain.png';
-import capmain7 from '../images/capmain7.png';
+import capmain_1200w from '../images/capmain-1200w.png';
+import capmain_720w from '../images/capmain-720w.png';
 
 const Main = () => {
     return (
@@ -9,7 +9,7 @@ const Main = () => {
             <div className="main">
                 <div className="mFlex">
                     <div className="mainImg">
-                        <img sizes="(max-width: 720px) 720px, 1200px" srcSet={`${capmain7} 720w, ${capmain} 1200w`} alt="main"/>
+                        <img sizes="(max-width: 720px) 720px, 1200px" srcSet={`${capmain_720w} 720w, ${capmain_1200w} 1200w`} alt="main"/>
                     </div>
                 </div>
             </div>

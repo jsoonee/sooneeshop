@@ -17,9 +17,6 @@ const Filter = () => {
     const selPdt = document.querySelectorAll('.pdt');
     const selCat = document.querySelectorAll(`.${cats[active]}`);
 
-    console.log(selPdt);
-    console.log(active);
-
     const applyFilter = () => {
         if (active === '') {
             selPdt.forEach((li) => {
