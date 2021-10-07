@@ -2,7 +2,8 @@ import React from 'react';
 import Filter from './Filter';
 import List from './List';
 
-const Product = () => {
+const Product = ({ products, addItem }) => {
+    
     return (
         <section className="sec product">
             <div className="wAlign">
@@ -12,8 +13,7 @@ const Product = () => {
                         <Filter/>
                     </div>
                 </div>
-                <List/>
-                <div className="more">More</div>
+                <List products={products} addItem={addItem}/>
             </div>
         </section>
     );

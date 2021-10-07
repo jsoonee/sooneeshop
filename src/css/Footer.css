@@ -1,0 +1,12 @@
+.footer {
+    text-align: center;
+    color: #808080;
+}
+
+.footIcon {
+    padding: 1rem;
+}
+
+.footIcon:hover {
+    cursor: pointer;
+}

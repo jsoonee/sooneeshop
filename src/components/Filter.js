@@ -20,8 +20,7 @@ const Filter = () => {
     const applyFilter = () => {
         if (active === '') {
             selPdt.forEach((li) => {
-                li.style.display = 'block';
-                return;
+                return (li.style.display = 'block');
             });
         } else {
             selPdt.forEach((li) => {
@@ -32,8 +31,6 @@ const Filter = () => {
             })
         }
     }
-
-    console.log(selCat);
 
     const handleOnClick = (index) => {
         if (index === active) {

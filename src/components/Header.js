@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeadset, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-const Header = () => {
+const Header = ({ cart }) => {
     return (
         <header className="sec header">
             <div className="head">
@@ -21,7 +21,7 @@ const Header = () => {
                                     <div className="service">Customer Service</div>
                                     <div className="tt-flex call">
                                         <div><FontAwesomeIcon icon={faHeadset}/></div>
-                                        <div>080-000-0000</div>
+                                        <div>000-000-0000</div>
                                     </div>
                                     <div className="tt-flex mail">
                                         <div><FontAwesomeIcon icon={faEnvelope}/></div>
@@ -34,8 +34,12 @@ const Header = () => {
                                 <span className="tooltip-text eventText">GRAND OPEN<br/>20% 할인 쿠폰 증정</span>
                             </li>
                             <li>
-                                <span className="cart">cart</span>
-                                <span className="qnt">0</span>
+                                <span className="tooltip">
+                                    <span className="cart">cart</span>
+                                    <span className="qnt">{cart.length}</span>
+                                </span>
+                                <span className="tooltip-text"></span>
+                                
                             </li>
                             <li>
                                 login
