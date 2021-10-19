@@ -23,7 +23,7 @@ const Header = (props) => {
             <div className="head">
                 <div className="hFlex">
                     <div className="logo">
-                        <a href="/">
+                        <a href="./">
                             SOONEESHOP
                         </a>
                     </div>
