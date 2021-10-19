@@ -2,15 +2,14 @@ import React from 'react';
 
 import ListCard from './ListCard';
 
-const List = ({ products, addItem }) => {
+const List = ({ products, addItem, modalData, openModal }) => {
     return (
         <ul className="pdts">
             {products.map(d => (
-                <ListCard key={d.id} data={d} addItem={addItem}/>
+                <ListCard key={d.id} data={d} addItem={addItem} modalData={modalData} openModal={openModal}/>
             ))}
         </ul>
     );
 }
-
 
 export default List;

@@ -25,6 +25,39 @@
     cursor: text;
 }
 
+.imageBox {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    padding: 0.5rem;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.modal-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-flex > h2 {
+    margin: 1rem 0 1.2rem 2rem;
+    font-weight: 500;
+}
+
+.pricetag {
+    margin: 1rem 2rem 1.2rem 0;
+    font-weight: 500;
+}
+
 .filter {
     text-align: center;
 }
@@ -59,7 +92,7 @@
     grid-template-columns: repeat(auto-fill, minmax(360px, auto));
     grid-gap: 2rem;
     justify-content: center;
-    padding: 2rem 0 2rem 0;
+    padding: 2rem 1rem 2rem 1rem;
 }
 
 .pic {
@@ -98,6 +131,14 @@
     cursor: pointer;
 }
 
+.search:hover .searchIcon {
+    color: #000;
+}
+
+.cartPlus:hover .cartIcon {
+    color: #000;
+}
+
 .hIcons {
     padding: 0.7rem;
     border: 5px solid #fff;
@@ -131,13 +172,26 @@
     cursor: pointer;
 }
 
+.closeModal {
+    position: absoulte;
+    top: 0;
+    left: 0;
+}
+
 @media screen and (max-width: 770px) {
     .pdts {
         grid-template-columns: repeat(2, 50%);
+        grid-gap: 1rem;
     }
 
     .pic img {
-        width: 50vw;
+        width: calc(50vw - 1rem);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .product {
+        padding: 7rem 0 5rem 0;
     }
 }
 
@@ -149,4 +203,13 @@
     .pHead {
         padding: 0 2rem 0 2rem;
     }
+
+    .modalImage {
+        width: 100vw;
+    }
+
+    .modal-flex > h2 {
+        font-size: 1.1rem;
+    }
+    
 }

@@ -20,4 +20,12 @@
     .mainImg img {
         height: 300px;
     }
+
+    .cartList {
+        max-height: 270px;
+    }
+
+    .product {
+        padding: 7rem 0 5rem 0;
+    }
 }

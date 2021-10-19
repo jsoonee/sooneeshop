@@ -4,27 +4,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faSearchPlus, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 const ListCard = (props) => {
-    const { name, sort, price, pic } = props.data;
+    const { name, sort, price, pic_3 } = props.data;
+
     return (
             <li className={`pdt ${sort}`}>
                 <div className="pic">
-                    <img src={pic} alt=""/>
+                    <img src={pic_3} alt=""/>
                     <div className="pHover">
                         <div className="hoverFlex">
-                            <span className="fa-stack fa-2x">
+                            <span className="fa-stack fa-2x search" onClick={() => {props.modalData(props.data); props.openModal();}}>
                                 <FontAwesomeIcon icon={faCircle} className="fa-stack-2x"/>
-                                <FontAwesomeIcon icon={faSearchPlus} className="fa-stack-1x" color="rgba(0,0,0,0.5)"/>
+                                <FontAwesomeIcon icon={faSearchPlus} className="fa-stack-1x searchIcon" color="rgba(0,0,0,0.5)"/>
                             </span>
-                            <span className="fa-stack fa-2x" onClick={() => props.addItem(props.data)}>
+                            <span className="fa-stack fa-2x cartPlus" onClick={() => props.addItem(props.data)}>
                                 <FontAwesomeIcon icon={faCircle} className="fa-stack-2x"/>
-                                <FontAwesomeIcon icon={faCartPlus} className="fa-stack-1x" color="rgba(0,0,0,0.5)"/>
+                                <FontAwesomeIcon icon={faCartPlus} className="fa-stack-1x cartIcon" color="rgba(0,0,0,0.5)"/>
                             </span>
                         </div>
                     </div>
                 </div>
                 <div className="desc">
                     <h2>{name}</h2>
-                    <div>₩{price}</div>
+                    <div>₩{price.toLocaleString('ko-KR')}</div>
                 </div>
             </li>
     );

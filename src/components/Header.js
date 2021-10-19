@@ -1,50 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import Cart from './Cart';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeadset, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-const Header = ({ cart }) => {
+const Header = (props) => {
+
+    const [cartOpen, setCartOpen] = useState(false);
+
+    const cartOnClick = () => {
+        if (!cartOpen) {
+            setCartOpen(true);
+        }
+        else {
+            setCartOpen(false);
+        }
+    }
+    
     return (
         <header className="sec header">
             <div className="head">
                 <div className="hFlex">
-                    <a href="/">
-                        <div className="logo">
+                    <div className="logo">
+                        <a href="/">
                             SOONEESHOP
-                        </div>
-                    </a>
-                    <div className="nav">
-                        <ul>
-                            <li className="contact">
-                                <span className="tooltip">contact</span>
-                                <span className="tooltip-text">
-                                    <div className="service">Customer Service</div>
-                                    <div className="tt-flex call">
-                                        <div><FontAwesomeIcon icon={faHeadset}/></div>
-                                        <div>000-000-0000</div>
-                                    </div>
-                                    <div className="tt-flex mail">
-                                        <div><FontAwesomeIcon icon={faEnvelope}/></div>
-                                        <div>support@sn.shop</div>
-                                    </div>
-                                </span>
-                            </li>
-                            <li className="event">
-                                <span className="tooltip">event</span>
-                                <span className="tooltip-text eventText">GRAND OPEN<br/>20% 할인 쿠폰 증정</span>
-                            </li>
-                            <li>
-                                <span className="tooltip">
-                                    <span className="cart">cart</span>
-                                    <span className="qnt">{cart.length}</span>
-                                </span>
-                                <span className="tooltip-text"></span>
-                                
-                            </li>
-                            <li>
-                                login
-                            </li>
-                        </ul>
+                        </a>
+                    </div>
+                    <div className="cartMenu">
+                        <span className="tooltip" onClick={cartOnClick}>
+                            <span className="fa-layers fa-fw cart">
+                                <FontAwesomeIcon icon={faShoppingCart}/>
+                                <span className="fa-layers-counter qnt">{props.cart.length}</span>
+                            </span>
+                        </span>
+                        { cartOpen ? <span className="cartTooltip"><Cart cart={props.cart} onDecrease={props.onDecrease} onIncrease={props.onIncrease} onRemove={props.onRemove} key={props.cart.id}/></span> : null }   
                     </div>
                 </div>
             </div>
