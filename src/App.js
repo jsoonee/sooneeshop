@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 import Header from './components/Header';
 import Main from './components/Main';
-import Product from './components/Product';
+import Product from './components/product/Product';
 import Footer from './components/Footer';
 
-import { data } from './components/data';
+import { data } from './components/data/data';
 
 import './App.css';
 import './css/Header.css';

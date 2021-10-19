@@ -1,0 +1,27 @@
+.filter {
+    text-align: center;
+}
+
+.filter > li {
+    display: inline-block;
+    margin: 0 0 0 3rem;
+    line-height: 30px;
+}
+
+.filter > li:hover {
+    cursor: pointer;
+}
+
+.active {
+    color: #a99a7c;
+    border-bottom: 1px solid #a99a7c;
+}
+
+.active:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.unactive:hover {
+    color: #a99a7c;
+}

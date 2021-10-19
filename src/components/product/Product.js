@@ -7,6 +7,10 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Filter from './Filter';
 import List from './List';
 
+import '../../css/Filter.css';
+import '../../css/List.css';
+import '../../css/Modal.css';
+
 const Product = ({ products, addItem }) => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [modalItem, setModalItem] = useState();

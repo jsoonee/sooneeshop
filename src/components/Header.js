@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Cart from './Cart';
+import Cart from './cart/Cart';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +17,7 @@ const Header = (props) => {
             setCartOpen(false);
         }
     }
-    
+
     return (
         <header className="sec header">
             <div className="head">
