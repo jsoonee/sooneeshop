@@ -7,17 +7,19 @@ https://jsoonee.github.io/sooneeshop
 ## Features
 
 ### Simple design
+<img src="src/images/home.png" alt="homepage" />
 
-### Add to cart
-원하는 상품을 장바구니에 담을 수 있습니다.
+### Add to cart/Remove items
+<img src="src/images/demo/add.gif">
 
 ### Filter
-카테고리별로 상품을 필터링할 수 있습니다.
+<img src="src/images/demo/filter.gif">
 
-### Product details
-상품의 상세정보를 모달창으로 확인할 수 있습니다.
+### Product detail page
+<img src="src/images/demo/detail.gif">
 
 ## Install
+
 ```
 // install required dependencies
 npm install
@@ -25,3 +27,6 @@ npm install
 // the application automatically runs on localhost:3000
 npm start 
 ```
+
+## License
+MIT © jsoonee
