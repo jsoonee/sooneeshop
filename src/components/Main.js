@@ -1,7 +1,7 @@
 import React from 'react';
 
-import capmain_1200w from '../images/capmain-1200w.png';
-import capmain_720w from '../images/capmain-720w.png';
+import capmain_1200w from '../images/main/capmain-1200w.png';
+import capmain_720w from '../images/main/capmain-720w.png';
 
 const Main = () => {
     return (
