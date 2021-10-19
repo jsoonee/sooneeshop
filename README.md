@@ -7,7 +7,7 @@ https://jsoonee.github.io/sooneeshop
 ## Features
 
 ### Simple design
-<img src="src/images/home.png" alt="homepage" />
+<img src="src/images/demo/home.png" alt="homepage" />
 
 ### Add to cart/Remove items
 <img src="src/images/demo/add.gif">
