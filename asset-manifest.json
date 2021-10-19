@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sooneeshop/static/css/main.5481a875.chunk.css",
-    "main.js": "/sooneeshop/static/js/main.c23df62d.chunk.js",
-    "main.js.map": "/sooneeshop/static/js/main.c23df62d.chunk.js.map",
+    "main.js": "/sooneeshop/static/js/main.292d12f2.chunk.js",
+    "main.js.map": "/sooneeshop/static/js/main.292d12f2.chunk.js.map",
     "runtime-main.js": "/sooneeshop/static/js/runtime-main.b30d4bf0.js",
     "runtime-main.js.map": "/sooneeshop/static/js/runtime-main.b30d4bf0.js.map",
     "static/js/2.7b59db68.chunk.js": "/sooneeshop/static/js/2.7b59db68.chunk.js",
@@ -75,6 +75,6 @@
     "static/js/runtime-main.b30d4bf0.js",
     "static/js/2.7b59db68.chunk.js",
     "static/css/main.5481a875.chunk.css",
-    "static/js/main.c23df62d.chunk.js"
+    "static/js/main.292d12f2.chunk.js"
   ]
 }
