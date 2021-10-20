@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/sooneeshop/static/css/main.5481a875.chunk.css",
-    "main.js": "/sooneeshop/static/js/main.292d12f2.chunk.js",
-    "main.js.map": "/sooneeshop/static/js/main.292d12f2.chunk.js.map",
+    "main.css": "/sooneeshop/static/css/main.8b51b8db.chunk.css",
+    "main.js": "/sooneeshop/static/js/main.00d6a21b.chunk.js",
+    "main.js.map": "/sooneeshop/static/js/main.00d6a21b.chunk.js.map",
     "runtime-main.js": "/sooneeshop/static/js/runtime-main.b30d4bf0.js",
     "runtime-main.js.map": "/sooneeshop/static/js/runtime-main.b30d4bf0.js.map",
-    "static/js/2.7b59db68.chunk.js": "/sooneeshop/static/js/2.7b59db68.chunk.js",
-    "static/js/2.7b59db68.chunk.js.map": "/sooneeshop/static/js/2.7b59db68.chunk.js.map",
+    "static/css/2.f4c56af9.chunk.css": "/sooneeshop/static/css/2.f4c56af9.chunk.css",
+    "static/js/2.6d546816.chunk.js": "/sooneeshop/static/js/2.6d546816.chunk.js",
+    "static/js/2.6d546816.chunk.js.map": "/sooneeshop/static/js/2.6d546816.chunk.js.map",
     "index.html": "/sooneeshop/index.html",
-    "static/css/main.5481a875.chunk.css.map": "/sooneeshop/static/css/main.5481a875.chunk.css.map",
-    "static/js/2.7b59db68.chunk.js.LICENSE.txt": "/sooneeshop/static/js/2.7b59db68.chunk.js.LICENSE.txt",
+    "static/css/2.f4c56af9.chunk.css.map": "/sooneeshop/static/css/2.f4c56af9.chunk.css.map",
+    "static/css/main.8b51b8db.chunk.css.map": "/sooneeshop/static/css/main.8b51b8db.chunk.css.map",
+    "static/js/2.6d546816.chunk.js.LICENSE.txt": "/sooneeshop/static/js/2.6d546816.chunk.js.LICENSE.txt",
     "static/media/belt-150w.18a48d9b.png": "/sooneeshop/static/media/belt-150w.18a48d9b.png",
     "static/media/belt-360w.cbcb5284.png": "/sooneeshop/static/media/belt-360w.cbcb5284.png",
     "static/media/belt-600w.c26f7026.png": "/sooneeshop/static/media/belt-600w.c26f7026.png",
@@ -48,7 +50,9 @@
     "static/media/shorts-150w.5ad690ef.png": "/sooneeshop/static/media/shorts-150w.5ad690ef.png",
     "static/media/shorts-360w.6735da88.png": "/sooneeshop/static/media/shorts-360w.6735da88.png",
     "static/media/shorts-600w.43c16c01.png": "/sooneeshop/static/media/shorts-600w.43c16c01.png",
-    "static/media/shorts2.47d1acb6.png": "/sooneeshop/static/media/shorts2.47d1acb6.png",
+    "static/media/shorts2-150w.53e8381b.png": "/sooneeshop/static/media/shorts2-150w.53e8381b.png",
+    "static/media/shorts2-360w.1f61914e.png": "/sooneeshop/static/media/shorts2-360w.1f61914e.png",
+    "static/media/shorts2-600w.70009a04.png": "/sooneeshop/static/media/shorts2-600w.70009a04.png",
     "static/media/sleeveless-150w.03e3d2f8.png": "/sooneeshop/static/media/sleeveless-150w.03e3d2f8.png",
     "static/media/sleeveless-360w.8cf3e440.png": "/sooneeshop/static/media/sleeveless-360w.8cf3e440.png",
     "static/media/sleeveless-600w.7313ac72.png": "/sooneeshop/static/media/sleeveless-600w.7313ac72.png",
@@ -73,8 +77,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b30d4bf0.js",
-    "static/js/2.7b59db68.chunk.js",
-    "static/css/main.5481a875.chunk.css",
-    "static/js/main.292d12f2.chunk.js"
+    "static/css/2.f4c56af9.chunk.css",
+    "static/js/2.6d546816.chunk.js",
+    "static/css/main.8b51b8db.chunk.css",
+    "static/js/main.00d6a21b.chunk.js"
   ]
 }
