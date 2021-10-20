@@ -29,9 +29,9 @@ const Cart = (props) => {
                             </div>
                             <div className="cartFlex">
                                 <div className="cartEl quantity cartFlex">
-                                    <div><button onClick={() => props.onDecrease(c.id)}>-</button></div>
+                                    <button onClick={() => props.onDecrease(c.id)}>-</button>
                                     <div className="qtt">{c.quantity}</div>
-                                    <div><button onClick={() => props.onIncrease(c.id)}>+</button></div>
+                                    <button onClick={() => props.onIncrease(c.id)}>+</button>
                                 </div>
                                 <div className="delete">
                                     <FontAwesomeIcon icon={faTimes} color="red" size="lg" onClick={() => props.onRemove(c.id)}/>

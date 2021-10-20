@@ -16,7 +16,7 @@ const ListCard = (props) => {
                                 <FontAwesomeIcon icon={faCircle} className="fa-stack-2x"/>
                                 <FontAwesomeIcon icon={faSearchPlus} className="fa-stack-1x searchIcon" color="rgba(0,0,0,0.5)"/>
                             </span>
-                            <span className="fa-stack fa-2x cartPlus" onClick={() => props.addItem(props.data)}>
+                            <span className="fa-stack fa-2x cartPlus" onClick={() => {props.showToast(); props.addItem(props.data);}}>
                                 <FontAwesomeIcon icon={faCircle} className="fa-stack-2x"/>
                                 <FontAwesomeIcon icon={faCartPlus} className="fa-stack-1x cartIcon" color="rgba(0,0,0,0.5)"/>
                             </span>

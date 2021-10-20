@@ -14,11 +14,12 @@
 .pHead {
     display: flex;
     justify-content: space-between;
-    padding: 0 4rem 0 4rem;
+    padding: 0 2.5rem 0 4rem;
 }
 
 .headline h1 {
     font-weight: 300;
+    text-align: center;
 }
 
 .headline h1:hover {
@@ -27,7 +28,7 @@
 
 
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 785px) {
     .pdts {
         grid-template-columns: repeat(2, 50%);
         grid-gap: 1rem;
@@ -42,15 +43,31 @@
     .product {
         padding: 7rem 0 5rem 0;
     }
+
+    .mainImg img {
+        height: 300px;
+    }
+
+    .cartList {
+        max-height: 270px;
+    }
+
+    .filter > li {
+        margin: 0 1rem 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
-    .filter > li {
-        margin: 0 0 0 1.5rem;
-    }
 
     .pHead {
-        padding: 0 2rem 0 2rem;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
     }
 
     .modalImage {
@@ -61,4 +78,62 @@
         font-size: 1.1rem;
     }
     
+    .headline h1 {
+        margin-bottom: 3rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .cart {
+        font-size: 1.8rem;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .main {
+        padding-top: 60px;
+    }
+
+    .cartTooltip {
+        margin-top: 15px;
+        margin-left: -307px;
+    }
+
+    .empty {
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    .product {
+        padding: 2rem 0 5rem 0;
+    }
+
+    .filter {
+        font-size: 0.9rem;
+    }
+
+    .cartTooltip {
+        width: calc(100vw - 22px);
+        padding-left: calc(385px - 100vw);
+        font-size: 0.9rem;
+    }
+
+    .cartItem img {
+        width: 50px;
+    }
+
+    .cartEl {
+        margin: 0.3rem;
+    }
+
+    .fa-stack {
+        font-size: 1.5rem;
+    }
 }

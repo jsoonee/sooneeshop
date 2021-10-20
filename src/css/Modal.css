@@ -1,3 +1,7 @@
+.ReactModal__Content {
+    z-index: 2;
+}
+
 .imageBox {
     position: relative;
 }

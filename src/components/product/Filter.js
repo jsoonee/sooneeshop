@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
+
 const Filter = () => {
     const [active, setActive] = useState('');
 
@@ -39,7 +42,7 @@ const Filter = () => {
         }
     }
 
-    return <ul className="filter">{cat}</ul>;
+    return <ul className="filter"><li><FontAwesomeIcon icon={faFilter}/></li>{cat}</ul>;
 }
 
 export default Filter;

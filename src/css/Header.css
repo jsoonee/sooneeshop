@@ -7,7 +7,10 @@
 }
 
 .header {
+    background: #fff;
+    position: fixed;
     height: 75px;
+    z-index: 1;
 }
 
 .head {
@@ -72,7 +75,7 @@
 .cartTooltip {
     position: absolute;
     display: block;
-    margin-left: -306px;
+    margin-left: -299px;
     margin-top: 20px;
     background: rgba(255, 255, 255);
     color: #000;
@@ -80,7 +83,7 @@
     border-radius: 5px;
     border: 1px solid rgba(0,0,0,.1);
     font-size: 0.95rem;
-    width: 360px;
+    width: 353px;
     min-height: 100px;
 }
 
@@ -88,143 +91,9 @@
     content: " ";
     position: absolute;
     bottom: 100%;
-    left: 87%;
+    right: 40px;
     margin-left: -7px;
     border-width: 7px;
     border-style: solid;
     border-color: transparent transparent rgba(0,0,0,.1) transparent;
-}
-
-.service {
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.tt-flex {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: row;
-}
-
-.call svg {
-    padding: 3px 5px 0 0;
-}
-
-.maIcon {
-    font-size: 1rem;
-}
-
-.mail svg {
-    margin: 6px 5px 0 0.6px;
-}
-
-.cartItem {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.cartFlex {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.cartItem img {
-    width: 70px;
-}
-
-.cartList {
-    max-height: 450px;
-    overflow: auto;
-}
-
-.total {
-    margin: 1rem;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.empty {
-    line-height: 100px;
-    text-align: center;
-    font-size: 1.1rem;
-}
-
-.cartEl {
-    margin: 0.5rem;
-}
-
-.cartName {
-    padding: 0.2rem 0 0.2rem 0;
-}
-
-.quantity {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23);
-    height: 25px;
-}
-
-.qtt {
-    width: 30px;
-    text-align: center;
-    border: 0;
-    border-top: 0 solid #dbdbdb;
-    border-bottom: 0 solid #dbdbdb;
-    font-size: 1rem;
-    height: 25px;
-}
-
-.quantity button {
-    width: 25px;
-    font-size: 1rem;
-    border: 0;
-    height: 25px;
-    background: #dbdbdb;
-    color: #5f5f5f;
-}
-
-.quantity button:hover {
-    background: #a6a6a6;
-    color: #000;
-}
-
-.delete {
-    font-size: 1rem;
-    margin: 0.5rem;
-}
-
-.delete:hover {
-    cursor: pointer;
-}
-
-.checkout {
-    background: #0055b3;
-    border: 0;
-    border-radius: 8px;
-    color: #fff;
-    width: 100px;
-    height: 40px;
-    margin-top: 1rem;
-    font-size: 1.05rem;
-    letter-spacing: 0.05rem;
-}
-
-.checkout:hover {
-    cursor: pointer;
-    background: #00254d;
-}
-
-@media screen and (max-width: 720px) {
-    .logo {
-        font-size: 1.5rem;
-    }
-
-    .navbar li {
-        margin-left: 1.5rem;
-        font-size: 0.9rem;
-    }
 }

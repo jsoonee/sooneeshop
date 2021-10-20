@@ -1,3 +1,7 @@
+.main {
+    padding-top: 75px;
+}
+
 .wAlign {
     max-width: 75rem;
     width: 100%;
@@ -14,18 +18,4 @@
     height: 500px;
     width: 100%;
     object-fit: cover;
-}
-
-@media screen and (max-width: 720px) {
-    .mainImg img {
-        height: 300px;
-    }
-
-    .cartList {
-        max-height: 270px;
-    }
-
-    .product {
-        padding: 7rem 0 5rem 0;
-    }
 }

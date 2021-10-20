@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { ToastContainer, toast } from "react-toastify";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import Filter from './Filter';
 import List from './List';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import '../../css/Filter.css';
 import '../../css/List.css';
@@ -32,6 +35,7 @@ const Product = ({ products, addItem }) => {
     const customStyles = {
         overlay: {
             backgroundColor: 'rgba(0,0,0,0.5)',
+            zIndex: '1000'
         },
         content: {
             top: '50%',
@@ -43,6 +47,19 @@ const Product = ({ products, addItem }) => {
             padding: '0',
         },
     };
+
+    const showToast = () => {
+        toast.success('🛒Added to your cart', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
+
     return (
         <section className="sec product">
             <div className="wAlign">
@@ -52,7 +69,7 @@ const Product = ({ products, addItem }) => {
                         <Filter/>
                     </div>
                 </div>
-                <List products={products} addItem={addItem} modalData={modalData} openModal={openModal}/>
+                <List products={products} addItem={addItem} modalData={modalData} openModal={openModal} showToast={showToast}/>
 
                 { modalItem &&
                     <Modal
@@ -71,6 +88,18 @@ const Product = ({ products, addItem }) => {
                         </div>
                     </Modal>
                 }
+
+                <ToastContainer
+                    position="top-right"
+                    autoClose={3000}
+                    hideProgressBar
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
 
             </div>
         </section>
