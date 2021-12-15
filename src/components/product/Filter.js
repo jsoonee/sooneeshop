@@ -7,9 +7,9 @@ const Filter = () => {
     const [active, setActive] = useState('');
 
     const cats = ['top', 'bottom', 'outer', 'acc'];
-    const cat = cats.map((el, index) => {
+    const cat = cats.map((el, id) => {
         return (
-            <li key={index} onClick={() => handleOnClick(index)} className={active === index ? 'active' : 'unactive'}>{el}</li>
+            <li key={id} onClick={() => handleOnClick(id)} className={active === id ? 'active' : 'unactive'}>{el}</li>
         );    
     })
     
@@ -20,7 +20,7 @@ const Filter = () => {
         const applyFilter = () => {
             if (active === '') {
                 selPdt.forEach((li) => {
-                    return (li.style.display = 'block');
+                    li.style.display = 'block';
                 });
             } else {
                 selPdt.forEach((li) => {
@@ -36,9 +36,9 @@ const Filter = () => {
 
     const handleOnClick = (index) => {
         if (index === active) {
-            return setActive('');
+            setActive('');
         } else {
-        setActive(index);
+            setActive(index);
         }
     }
 

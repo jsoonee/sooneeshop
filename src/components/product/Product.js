@@ -51,7 +51,7 @@ const Product = ({ products, addItem }) => {
     const showToast = () => {
         toast.success('🛒Added to your cart', {
             position: "top-center",
-            autoClose: 3000,
+            autoClose: 2000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
@@ -80,7 +80,7 @@ const Product = ({ products, addItem }) => {
                     >
                         <div className="imageBox">
                             <div><img src={modalItem.pic_6} alt="" className="modalImage"/></div>
-                            <div className="close" onClick={closeModal}><FontAwesomeIcon icon={faTimes} size="lg"/></div>
+                            <div className="close" onClick={closeModal}><FontAwesomeIcon icon={faTimes} size="2x"/></div>
                         </div>
                         <div className="modal-flex">
                             <h2>{modalItem.name}</h2>
@@ -91,7 +91,7 @@ const Product = ({ products, addItem }) => {
 
                 <ToastContainer
                     position="top-right"
-                    autoClose={3000}
+                    autoClose={2000}
                     hideProgressBar
                     newestOnTop={false}
                     closeOnClick

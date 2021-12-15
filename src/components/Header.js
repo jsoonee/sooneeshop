@@ -12,12 +12,8 @@ const Header = (props) => {
     const [cartOpen, setCartOpen] = useState(false);
 
     const cartOnClick = () => {
-        if (!cartOpen) {
-            setCartOpen(true);
-        }
-        else {
-            setCartOpen(false);
-        }
+        if (cartOpen) setCartOpen(false);
+        if (!cartOpen) setCartOpen(true);
     }
 
     return (
