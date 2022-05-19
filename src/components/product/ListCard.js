@@ -8,12 +8,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const ListCard = (props) => {
-  const { name, sort, price, pic_3 } = props.data;
+  const { id, name, sort, price } = props.data;
 
   return (
     <li className={`pdt ${sort}`}>
       <div className="pic">
-        <img src={pic_3} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/images/products/${id}-360w.png`} alt={name} />
         <div className="pHover">
           <div className="hoverFlex">
             <span
@@ -30,7 +30,7 @@ const ListCard = (props) => {
                 color="rgba(0,0,0,0.5)"
               />
             </span>
-            <span
+            <span 
               className="fa-stack fa-2x cartPlus"
               onClick={() => {
                 props.showToast();

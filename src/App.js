@@ -5,7 +5,7 @@ import Main from './components/Main';
 import Product from './components/product/Product';
 import Footer from './components/Footer';
 
-import { data } from './components/data/data';
+import { data } from './assets/data.json';
 
 import './App.css';
 import './css/Header.css';
@@ -32,11 +32,10 @@ const App = () => {
   const onDecrease = (item) => {
     if (addCart.find(i => i.id === item).quantity === 1) {
       addCart.find(i => i.id === item).quantity = 1;
-      return (setAddCart([...addCart]));
     } else {
       addCart.find(i => i.id === item).quantity -= 1;
-      return (setAddCart([...addCart]));
     }
+    return (setAddCart([...addCart]));
   }
 
   const onIncrease = (item) => {
@@ -45,7 +44,7 @@ const App = () => {
   }
 
   const onRemove = (remove) =>
-    setAddCart((prev) => prev.filter(({ id }) => id !== remove));
+    setAddCart(prev => prev.filter(({ id }) => id !== remove));
 
   return (
     <div className="App">

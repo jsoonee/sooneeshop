@@ -1,8 +1,5 @@
 import React from "react";
 
-import capmain_1200w from "../images/main/capmain-1200w.png";
-import capmain_720w from "../images/main/capmain-720w.png";
-
 const Main = () => {
   return (
     <main className="sec">
@@ -11,7 +8,7 @@ const Main = () => {
           <div className="mainImg">
             <img
               sizes="(max-width: 720px) 720px, 1200px"
-              srcSet={`${capmain_720w} 720w, ${capmain_1200w} 1200w`}
+              srcSet={`${process.env.PUBLIC_URL}/images/main/capmain-720w.png 720w, ${process.env.PUBLIC_URL}/images/main/capmain-1200w.png 1200w`}
               alt="main"
             />
           </div>
