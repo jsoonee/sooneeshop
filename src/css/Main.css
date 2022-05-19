@@ -1,21 +1,21 @@
 .main {
-    padding-top: 75px;
+  padding-top: 75px;
 }
 
 .wAlign {
-    max-width: 75rem;
-    width: 100%;
+  max-width: 75rem;
+  width: 100%;
 }
 
 .mFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .mainImg img {
-    height: 500px;
-    width: 100%;
-    object-fit: cover;
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
 }

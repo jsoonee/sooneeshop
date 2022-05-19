@@ -1,98 +1,98 @@
 .cartList {
-    max-height: 450px;
-    overflow: auto;
+  max-height: 450px;
+  overflow: auto;
 }
 
 .cartItem {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .cartFlex {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .cartItem img {
-    width: 70px;
+  width: 70px;
 }
 
 .cartEl {
-    margin: 0.5rem;
+  margin: 0.5rem;
 }
 
 .cartName {
-    padding: 0.2rem 0 0.2rem 0;
+  padding: 0.2rem 0 0.2rem 0;
 }
 
 .quantity {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23);
-    height: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.23);
+  height: 20px;
 }
 
 .qtt {
-    width: 25px;
-    text-align: center;
-    border: 0;
-    border-top: 0 solid #dbdbdb;
-    border-bottom: 0 solid #dbdbdb;
-    font-size: 0.9rem;
-    height: 20px;
+  width: 25px;
+  text-align: center;
+  border: 0;
+  border-top: 0 solid #dbdbdb;
+  border-bottom: 0 solid #dbdbdb;
+  font-size: 0.9rem;
+  height: 20px;
 }
 
 .quantity button {
-    width: 20px;
-    font-size: 1rem;
-    border: 0;
-    height: 20px;
-    background: #dbdbdb;
-    color: #5f5f5f;
+  width: 20px;
+  font-size: 1rem;
+  border: 0;
+  height: 20px;
+  background: #dbdbdb;
+  color: #5f5f5f;
 }
 
 .quantity button:hover {
-    background: #a6a6a6;
-    color: #000;
+  background: #a6a6a6;
+  color: #000;
 }
 
 .delete {
-    font-size: 1rem;
-    margin: 0.5rem;
+  font-size: 1rem;
+  margin: 0.5rem;
 }
 
 .delete:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .total {
-    margin: 1rem;
-    text-align: center;
-    font-size: 1rem;
+  margin: 1rem;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .checkout {
-    background: #0055b3;
-    border: 0;
-    border-radius: 8px;
-    color: #fff;
-    width: 100px;
-    height: 40px;
-    margin-top: 1rem;
-    font-size: 1.05rem;
-    letter-spacing: 0.05rem;
+  background: #0055b3;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  width: 100px;
+  height: 40px;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.05rem;
 }
 
 .empty {
-    line-height: 100px;
-    text-align: center;
-    font-size: 1.1rem;
+  line-height: 100px;
+  text-align: center;
+  font-size: 1.1rem;
 }
 
 .checkout:hover {
-    cursor: pointer;
-    background: #00254d;
+  cursor: pointer;
+  background: #00254d;
 }

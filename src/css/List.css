@@ -1,62 +1,62 @@
 .pdts {
-    display: grid;
-    list-style: none;
-    grid-template-columns: repeat(auto-fill, minmax(360px, auto));
-    grid-gap: 2rem;
-    justify-content: center;
-    padding: 2rem 1rem 2rem 1rem;
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(360px, auto));
+  grid-gap: 2rem;
+  justify-content: center;
+  padding: 2rem 1rem 2rem 1rem;
 }
 
 .pic {
-    position: relative;
-    margin-bottom: 0.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
 }
 
 .pic img {
-    width: 360px;
+  width: 360px;
 }
 
 .pic .pHover {
-    display: none;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: #fff;
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
 }
 
 .pic:hover .pHover {
-    display: block;
+  display: block;
 }
 
 .hoverFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .hoverFlex .fa-stack:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .search:hover .searchIcon {
-    color: #000;
+  color: #000;
 }
 
 .cartPlus:hover .cartIcon {
-    color: #000;
+  color: #000;
 }
 
 .desc {
-    text-align: center;
+  text-align: center;
 }
 
 .desc h2 {
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
 }

@@ -1,27 +1,27 @@
 .filter {
-    text-align: center;
+  text-align: center;
 }
 
 .filter > li {
-    display: inline-block;
-    margin: 0 1.5rem 0 1.5rem;
-    line-height: 30px;
+  display: inline-block;
+  margin: 0 1.5rem 0 1.5rem;
+  line-height: 30px;
 }
 
 .filter > li:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .active {
-    color: #a99a7c;
-    border-bottom: 1px solid #a99a7c;
+  color: #a99a7c;
+  border-bottom: 1px solid #a99a7c;
 }
 
 .active:hover {
-    color: #000;
-    border-bottom: 1px solid #000;
+  color: #000;
+  border-bottom: 1px solid #000;
 }
 
 .unactive:hover {
-    color: #a99a7c;
+  color: #a99a7c;
 }
