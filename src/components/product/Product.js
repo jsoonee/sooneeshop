@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
 
 import Filter from "./Filter";
 import List from "./List";
 import Modal from "./Modal";
-
-import "react-toastify/dist/ReactToastify.css";
 
 import "../../css/Filter.css";
 import "../../css/List.css";
@@ -27,21 +24,10 @@ const Product = ({ products, addItem, openCart }) => {
     setModalItem(item);
   }
 
-  const showToast = () => {
-    toast.success("🛒Added to your cart", {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  };
-
   return (
     <section className="sec product">
       <div className="wAlign">
+
         <div className="pHead">
           <div className="headline">
             <h1>products</h1>
@@ -50,13 +36,13 @@ const Product = ({ products, addItem, openCart }) => {
             <Filter />
           </div>
         </div>
+
         <List
           products={products}
           addItem={addItem}
           openCart={openCart}
           modalData={modalData}
           openModal={openModal}
-          showToast={showToast}
         />
 
         {modalItem && (
@@ -67,17 +53,6 @@ const Product = ({ products, addItem, openCart }) => {
           />
         )}
 
-        <ToastContainer
-          position="top-right"
-          autoClose={2000}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
       </div>
     </section>
   );

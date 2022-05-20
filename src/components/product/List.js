@@ -12,7 +12,6 @@ const List = ({ products, addItem, modalData, openModal, showToast }) => {
           addItem={addItem}
           modalData={modalData}
           openModal={openModal}
-          showToast={showToast}
         />
       ))}
     </ul>

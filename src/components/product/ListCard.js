@@ -33,7 +33,6 @@ const ListCard = (props) => {
             <span 
               className="fa-stack fa-2x cartPlus"
               onClick={() => {
-                props.showToast();
                 props.addItem(props.data);
               }}
             >
