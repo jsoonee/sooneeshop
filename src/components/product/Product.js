@@ -11,7 +11,7 @@ import "../../css/Filter.css";
 import "../../css/List.css";
 import "../../css/Modal.css";
 
-const Product = ({ products, addItem }) => {
+const Product = ({ products, addItem, openCart }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalItem, setModalItem] = useState();
 
@@ -53,6 +53,7 @@ const Product = ({ products, addItem }) => {
         <List
           products={products}
           addItem={addItem}
+          openCart={openCart}
           modalData={modalData}
           openModal={openModal}
           showToast={showToast}
@@ -66,7 +67,7 @@ const Product = ({ products, addItem }) => {
           />
         )}
 
-        <ToastContainer theme={window.matchMedia("(prefers-color-theme: dark)").matches ? "dark" : "light"}
+        <ToastContainer
           position="top-right"
           autoClose={2000}
           hideProgressBar

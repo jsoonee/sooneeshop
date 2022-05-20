@@ -5,8 +5,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Cart = (props) => {
   const countTotal = props.cart.reduce(
-    (acc, cur) => acc + cur.quantity * cur.price,
-    0
+    (acc, cur) => acc + cur.quantity * cur.price, 0
   );
   const onCheckout = () => {
     alert("총 금액 : ₩" + countTotal.toLocaleString("ko-KR"));
@@ -28,7 +27,7 @@ const Cart = (props) => {
                     <p className="cartName">
                       ₩{(c.price * c.quantity).toLocaleString("ko-KR")}
                     </p>
-                  </div>
+                  </div> 
                 </div>
               </div>
               <div className="cartFlex">

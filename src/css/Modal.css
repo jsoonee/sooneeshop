@@ -8,6 +8,7 @@
 }
 
 .close {
+  color: #2c2c2c;
   position: absolute;
   top: 0;
   right: 0;
@@ -34,4 +35,10 @@
 .priceTag {
   margin: 1rem 2rem 1.2rem 0;
   font-weight: 500;
+}
+
+@media screen and (max-height: 670px) {
+  .modalImage {
+    width: calc(100vh - 70px);
+  }
 }

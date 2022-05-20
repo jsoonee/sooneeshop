@@ -95,8 +95,12 @@
   }
 
   .cartTooltip {
-    margin-top: 15px;
+    margin-top: 14px;
     margin-left: -307px;
+  }
+
+  .cartTooltip:after {
+    right: 40px;
   }
 
   .empty {

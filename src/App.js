@@ -48,9 +48,9 @@ const App = () => {
 
   return (
     <div className="App">
-        <Header cart={addCart} onDecrease={onDecrease} onIncrease={onIncrease} onRemove={onRemove}/>
+        <Header cart={addCart} onDecrease={onDecrease} onIncrease={onIncrease} onRemove={onRemove} />
         <Main/>
-        <Product products={products} addItem={addItem}/>
+        <Product products={products} addItem={addItem} />
         <Footer/>
     </div>
   );
