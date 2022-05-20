@@ -20,7 +20,7 @@ const Cart = (props) => {
             <div className="cartItem">
               <div className="cartFlex">
                 <div className="cartEl">
-                  <img src={c.pic_1} alt="" />
+                  <img src={`${process.env.PUBLIC_URL}/images/products/${c.id}-150w.png`} alt="" />
                 </div>
                 <div>
                   <div className="cartEl">
@@ -40,7 +40,7 @@ const Cart = (props) => {
                 <div className="delete">
                   <FontAwesomeIcon
                     icon={faTimes}
-                    color="red"
+                    color="var(--text-color)"
                     size="lg"
                     onClick={() => props.onRemove(c.id)}
                   />

@@ -1,6 +1,6 @@
 .footer {
   text-align: center;
-  color: #808080;
+  color: var(--sub-color);
 }
 
 .footIcon {

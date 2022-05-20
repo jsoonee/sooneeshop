@@ -7,7 +7,7 @@
 }
 
 .header {
-  background: #fff;
+  background-color: rgba(var(--bg-rgb), 0.9);
   position: fixed;
   height: 75px;
   z-index: 1;
@@ -29,13 +29,17 @@
 
 .hFlex a {
   text-decoration: none;
-  color: #000;
+  color: var(--text-color);
 }
 
 .logo {
   font-family: "Lora", serif;
   font-size: 1.7rem;
   margin-left: 2rem;
+}
+
+.logo a:hover {
+  color: var(--sub-color);
 }
 
 .cartMenu {
@@ -52,13 +56,16 @@
 }
 
 .cart {
-  color: #000;
+  color: var(--text-color);
   font-size: 2.2rem;
 }
 
 .cart:hover {
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.5);
+}
+
+.cartIcon:hover {
+  color: var(--sub-color);
 }
 
 .round {
@@ -73,12 +80,12 @@
 }
 
 .cartTooltip {
+  background-color: var(--sf-color);
   position: absolute;
   display: block;
   margin-left: -299px;
   margin-top: 20px;
-  background: rgba(255, 255, 255);
-  color: #000;
+  color: var(--text-color);;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1);

@@ -28,7 +28,7 @@ const Header = (props) => {
           <div className="cartMenu">
             <span className="tooltip" onClick={cartOnClick}>
               <span className="fa-layers fa-fw cart">
-            		<FontAwesomeIcon icon={faShoppingCart}/>
+            		<FontAwesomeIcon icon={faShoppingCart} className="cartIcon"/>
               	<span className="fa-layers-counter qnt">{props.cart.length}</span>
               </span>
             </span>

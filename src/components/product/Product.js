@@ -66,7 +66,7 @@ const Product = ({ products, addItem }) => {
           />
         )}
 
-        <ToastContainer
+        <ToastContainer theme={window.matchMedia("(prefers-color-theme: dark)").matches ? "dark" : "light"}
           position="top-right"
           autoClose={2000}
           hideProgressBar

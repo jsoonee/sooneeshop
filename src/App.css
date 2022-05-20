@@ -1,5 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
+:root {
+  --bg-color: #fff;
+  --bg-rgb: 255, 255, 255;
+  --sf-color: #fbfbfb;
+  --text-color: #000;
+  --text-rgb: 0, 0, 0;
+  --sub-color: #817254;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #2c2c2c;
+    --bg-rgb: 44, 44, 44;
+    --sf-color: #424242;
+    --text-color: #fff;
+    --text-rgb: 255, 255, 255;
+    --sub-color: #c2b7a2;    
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +34,8 @@ body {
   user-select: none;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 ul {

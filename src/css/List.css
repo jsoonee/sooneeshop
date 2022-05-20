@@ -9,22 +9,20 @@
 
 .pic {
   position: relative;
-  margin-bottom: 0.5rem;
-}
-
-.pic img {
-  width: 360px;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  margin-bottom: 1rem;
 }
 
 .pic .pHover {
   display: none;
   position: absolute;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(var(--text-rgb), 0.4);
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  color: #fff;
 }
 
 .pic:hover .pHover {
@@ -44,11 +42,11 @@
 }
 
 .search:hover .searchIcon {
-  color: #000;
+  color: var(--sub-color);
 }
 
 .cartPlus:hover .cartIcon {
-  color: #000;
+  color: var(--sub-color);
 }
 
 .desc {

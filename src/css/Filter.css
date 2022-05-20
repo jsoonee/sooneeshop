@@ -13,15 +13,14 @@
 }
 
 .active {
-  color: #a99a7c;
-  border-bottom: 1px solid #a99a7c;
+  color: var(--sub-color);
+  border-bottom: 1px solid var(--sub-color);
 }
 
 .active:hover {
-  color: #000;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--sub-color);;
 }
 
 .unactive:hover {
-  color: #a99a7c;
+  color: var(--sub-color);
 }

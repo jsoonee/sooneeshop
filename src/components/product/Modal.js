@@ -8,10 +8,11 @@ const Modal = ({ data, closeModal, isOpen }) => {
 
   const customStyles = {
     overlay: {
-      backgroundColor: "rgba(0,0,0,0.5)",
+      backgroundColor: "rgba(var(--bg-rgb), 0.5)",
       zIndex: "1000",
     },
     content: {
+      backgroundColor: "var(--bg-color)",
       top: "50%",
       left: "50%",
       right: "auto",
@@ -31,7 +32,7 @@ const Modal = ({ data, closeModal, isOpen }) => {
     >
       <div className="imageBox">
         <div>
-          <img src={`${process.env.PUBLIC_URL}/images/products/${data.id}-600w.png`} alt="modal image" className="modalImage" />
+          <img src={`${process.env.PUBLIC_URL}/images/products/${data.id}-600w.png`} alt="modal" className="modalImage" />
         </div>
         <div className="close" onClick={closeModal}>
           <FontAwesomeIcon icon={faTimes} size="2x" />

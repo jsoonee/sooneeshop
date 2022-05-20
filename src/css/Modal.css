@@ -1,5 +1,6 @@
 .ReactModal__Content {
   z-index: 2;
+  background-color: var(--bg-color);
 }
 
 .imageBox {

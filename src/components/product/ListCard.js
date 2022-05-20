@@ -23,11 +23,11 @@ const ListCard = (props) => {
                 props.openModal();
               }}
             >
-              <FontAwesomeIcon icon={faCircle} className="fa-stack-2x" />
+              <FontAwesomeIcon icon={faCircle} className="fa-stack-2x" color="var(--bg-color)"/>
               <FontAwesomeIcon
                 icon={faSearchPlus}
                 className="fa-stack-1x searchIcon"
-                color="rgba(0,0,0,0.5)"
+                color="var(--text-color)"
               />
             </span>
             <span 
@@ -37,11 +37,11 @@ const ListCard = (props) => {
                 props.addItem(props.data);
               }}
             >
-              <FontAwesomeIcon icon={faCircle} className="fa-stack-2x" />
+              <FontAwesomeIcon icon={faCircle} className="fa-stack-2x"  color="var(--bg-color)"/>
               <FontAwesomeIcon
                 icon={faCartPlus}
                 className="fa-stack-1x cartIcon"
-                color="rgba(0,0,0,0.5)"
+                color="var(--text-color)"
               />
             </span>
           </div>
