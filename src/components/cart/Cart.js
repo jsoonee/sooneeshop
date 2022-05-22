@@ -8,7 +8,7 @@ const Cart = (props) => {
     (acc, cur) => acc + cur.quantity * cur.price, 0
   );
   const onCheckout = () => {
-    alert("총 금액 : ₩" + countTotal.toLocaleString("ko-KR"));
+    alert("Total amount : ₩" + countTotal.toLocaleString("ko-KR"));
   };
 
   return (
@@ -19,7 +19,11 @@ const Cart = (props) => {
             <div className="cartItem">
               <div className="cartFlex">
                 <div className="cartEl">
-                  <img src={`${process.env.PUBLIC_URL}/images/products/${c.id}-150w.png`} alt="" />
+                  {/* <picture>
+                    <source type="image/webp" srcSet={`${process.env.PUBLIC_URL}/images/products/${c.id}-150w.webp`} />
+                    <img src={`${process.env.PUBLIC_URL}/images/products/${c.id}-150w.png`} alt="" />
+                  </picture> */}
+                  <img src={`${process.env.PUBLIC_URL}/images/products/${c.id}-150w.webp`} alt="" />
                 </div>
                 <div>
                   <div className="cartEl">
@@ -51,7 +55,7 @@ const Cart = (props) => {
       </ul>
       {props.cart.length >= 1 && (
         <div className="total">
-          <div>총 금액 : ₩{countTotal.toLocaleString("ko-KR")}</div>
+          <div>Total : ₩{countTotal.toLocaleString("ko-KR")}</div>
           <div>
             <button className="checkout" onClick={onCheckout}>
               checkout
@@ -59,7 +63,7 @@ const Cart = (props) => {
           </div>
         </div>
       )}
-      {!props.cart.length && <p className="empty">장바구니가 비었네요.</p>}
+      {!props.cart.length && <p className="empty">The cart is empty.</p>}
     </>
   );
 };

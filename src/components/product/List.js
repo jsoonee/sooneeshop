@@ -2,7 +2,7 @@ import React from "react";
 
 import ListCard from "./ListCard";
 
-const List = ({ products, addItem, modalData, openModal, showToast }) => {
+const List = ({ products, addItem, modalData, openModal }) => {
   return (
     <ul className="pdts">
       {products.map((d) => (

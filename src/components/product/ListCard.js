@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,12 +9,33 @@ import {
 
 const ListCard = (props) => {
   const { id, name, sort, price } = props.data;
+  const cardRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    const handleCardClick = (event) => {
+      const isMobile = /Mobi/.test(window.navigator.userAgent);
+      if (isMobile && cardRef.current && cardRef.current.contains(event.target)) {
+        buttonRef.current.style.display = "block";
+      } else {
+        buttonRef.current.style.display = "none";
+      }
+    }
+    document.addEventListener("click", handleCardClick);
+    return () => {
+      document.removeEventListener("click", handleCardClick);
+    }
+  }, []);
 
   return (
     <li className={`pdt ${sort}`}>
-      <div className="pic">
-        <img src={`${process.env.PUBLIC_URL}/images/products/${id}-360w.png`} alt={name} />
-        <div className="pHover">
+      <div className="pic" ref={cardRef}>
+        {/* <picture>
+          <source type="image/webp" srcSet={`${process.env.PUBLIC_URL}/images/products/${id}-360w.webp`} />
+          <img src={`${process.env.PUBLIC_URL}/images/products/${id}-360w.png`} alt={name} />
+        </picture> */}
+        <img src={`${process.env.PUBLIC_URL}/images/products/${id}-360w.webp`} alt={name} />
+        <div className="pHover" ref={buttonRef}>
           <div className="hoverFlex">
             <span
               className="fa-stack fa-2x search"

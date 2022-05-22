@@ -6,11 +6,18 @@ const Main = () => {
       <div className="main">
         <div className="mFlex">
           <div className="mainImg">
-            <img
-              sizes="(max-width: 720px) 720px, 1200px"
-              srcSet={`${process.env.PUBLIC_URL}/images/main/capmain-720w.png 720w, ${process.env.PUBLIC_URL}/images/main/capmain-1200w.png 1200w`}
-              alt="main"
-            />
+            {/* <picture>
+              <source 
+                type="image/webp"
+                src={`${process.env.PUBLIC_URL}/images/main/capmain-1200w.webp`}
+                srcSet={`
+                  ${process.env.PUBLIC_URL}/images/main/capmain-720w.webp 720w,
+                  ${process.env.PUBLIC_URL}/images/main/capmain-1200w.webp 1200w
+                `}
+              />
+              <img src={`${process.env.PUBLIC_URL}/images/main/capmain-1200w.png`} alt="main" />
+            </picture> */}
+            <img src={`${process.env.PUBLIC_URL}/images/main/capmain-1200w.webp`} alt="main" />
           </div>
         </div>
       </div>

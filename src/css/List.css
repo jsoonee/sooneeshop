@@ -7,6 +7,10 @@
   padding: 2rem 1rem 2rem 1rem;
 }
 
+.pdt {
+  margin: 1rem 0 1rem 0;
+}
+
 .pic {
   position: relative;
   width: 100%;
@@ -27,6 +31,12 @@
 
 .pic:hover .pHover {
   display: block;
+}
+
+@media (hover: none) {
+  .pic:hover .pHover {
+    display: none;
+  }
 }
 
 .hoverFlex {

@@ -26,14 +26,18 @@
   cursor: text;
 }
 
-@media screen and (max-width: 785px) {
+@media screen and (max-width: 800px) {
   .pdts {
     grid-template-columns: repeat(2, 50%);
     grid-gap: 1rem;
   }
 
   .pic img {
-    width: calc(50vw - 1rem);
+    width: 100%;
+  }
+
+  .pHover {
+    width: calc(50vw - 1.5rem);
   }
 }
 

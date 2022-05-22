@@ -32,7 +32,10 @@ const Modal = ({ data, closeModal, isOpen }) => {
     >
       <div className="imageBox">
         <div>
-          <img src={`${process.env.PUBLIC_URL}/images/products/${data.id}-600w.png`} alt="modal" className="modalImage" />
+          <picture>
+            <source type="image/webp" srcSet={`${process.env.PUBLIC_URL}/images/products/${data.id}-600w.webp`} />
+            <img src={`${process.env.PUBLIC_URL}/images/products/${data.id}-600w.png`} alt="modal" className="modalImage" />
+          </picture>
         </div>
         <div className="close" onClick={closeModal}>
           <FontAwesomeIcon icon={faTimes} size="2x" />
