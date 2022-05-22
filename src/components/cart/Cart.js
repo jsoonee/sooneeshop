@@ -19,11 +19,7 @@ const Cart = (props) => {
             <div className="cartItem">
               <div className="cartFlex">
                 <div className="cartEl">
-                  {/* <picture>
-                    <source type="image/webp" srcSet={`${process.env.PUBLIC_URL}/images/products/${c.id}-150w.webp`} />
-                    <img src={`${process.env.PUBLIC_URL}/images/products/${c.id}-150w.png`} alt="" />
-                  </picture> */}
-                  <img src={`${process.env.PUBLIC_URL}/images/products/${c.id}-150w.webp`} alt="" />
+                  <img src={`${process.env.PUBLIC_URL}/images/products/${c.id}-150w.webp`} alt="cart" />
                 </div>
                 <div>
                   <div className="cartEl">

@@ -17,7 +17,7 @@ const ListCard = (props) => {
       const isMobile = /Mobi/.test(window.navigator.userAgent);
       if (isMobile && cardRef.current && cardRef.current.contains(event.target)) {
         buttonRef.current.style.display = "block";
-      } else {
+      } else if (isMobile) {
         buttonRef.current.style.display = "none";
       }
     }
@@ -30,10 +30,6 @@ const ListCard = (props) => {
   return (
     <li className={`pdt ${sort}`}>
       <div className="pic" ref={cardRef}>
-        {/* <picture>
-          <source type="image/webp" srcSet={`${process.env.PUBLIC_URL}/images/products/${id}-360w.webp`} />
-          <img src={`${process.env.PUBLIC_URL}/images/products/${id}-360w.png`} alt={name} />
-        </picture> */}
         <img src={`${process.env.PUBLIC_URL}/images/products/${id}-360w.webp`} alt={name} />
         <div className="pHover" ref={buttonRef}>
           <div className="hoverFlex">
