@@ -3,7 +3,7 @@ sooneeShop is a simple React shopping cart app.
 <br/>
 
 ## Demo
-(https://xxx.com/xxx](https://jsoonee.github.io/sooneeshop){:target="_blank"}
+(https://jsoonee.github.io/sooneeshop){:target="_blank"}
 <br/>
 
 ## Features
