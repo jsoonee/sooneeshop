@@ -1,0 +1,124 @@
+{
+	"products": [
+		{
+			"id": "0",
+			"name": "basic belt",
+			"cat": "acc",
+			"price": "14900"
+		},
+		{
+			"id": "1",
+			"name": "green hoodie",
+			"cat": "top",
+			"price": "39900"
+		},
+		{
+			"id": "2",
+			"name": "brown jacket",
+			"cat": "outer",
+			"price": "99000"
+		},
+		{
+			"id": "3",
+			"name": "black jacket",
+			"cat": "outer",
+			"price": "79900"
+		},
+		{
+			"id": "4",
+			"name": "regular fit jeans",
+			"cat": "bottom",
+			"price": "49900"
+		},
+		{
+			"id": "5",
+			"name": "relaxed fit jeans",
+			"cat": "bottom",
+			"price": "49900"
+		},
+		{
+			"id": "6",
+			"name": "brown cardigan",
+			"cat": "outer",
+			"price": "59900"
+		},
+		{
+			"id": "7",
+			"name": "navy trunks",
+			"cat": "underwear",
+			"price": "9900"
+		},
+		{
+			"id": "8",
+			"name": "beige pants",
+			"cat": "bottom",
+			"price": "39900"
+		},
+		{
+			"id": "9",
+			"name": "black pants",
+			"cat": "bottom",
+			"price": "44900"
+		},
+		{
+			"id": "10",
+			"name": "polo shirt",
+			"cat": "top",
+			"price": "29900"
+		},
+		{
+			"id": "11",
+			"name": "beige shorts",
+			"cat": "bottom",
+			"price": "34900"
+		},
+		{
+			"id": "12",
+			"name": "blue shorts",
+			"cat": "bottom",
+			"price": "29900"
+		},
+		{
+			"id": "13",
+			"name": "sleeveless shirt",
+			"cat": "top",
+			"price": "19900"
+		},
+		{
+			"id": "14",
+			"name": "white socks",
+			"cat": "footwear",
+			"price": "4900"
+		},
+		{
+			"id": "15",
+			"name": "grey sweatshirt",
+			"cat": "top",
+			"price": "49900"
+		},
+		{
+			"id": "16",
+			"name": "blue sweatshirt",
+			"cat": "top",
+			"price": "49900"
+		},
+		{
+			"id": "17",
+			"name": "charcoal t-shirt",
+			"cat": "top",
+			"price": "29900"
+		},
+		{
+			"id": "18",
+			"name": "skyblue t-shirt",
+			"cat": "top",
+			"price": "24900"
+		},
+		{
+			"id": "19",
+			"name": "umbrella",
+			"cat": "acc",
+			"price": "19900"
+		}
+	]
+}
