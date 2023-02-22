@@ -1,28 +1,42 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
+import { AppState } from "../store";
 
 interface IBagItem {
 	id: string;
-	size?: string;
+	name: string;
+	cat: string;
+	price: string;
+	sizes: string[];
+	size: string;
 	qty: number;
 }
 
-export interface IBag {
-	bag: IBagItem[];
-}
-
-const initialState: IBag[] = [];
+const initialState: IBagItem[] = [];
 
 const bagSlice = createSlice({
 	name: "bag",
 	initialState,
 	reducers: {
 		add(state, action) {
-			// const existed = state.find(
-			// 	(item) => JSON.stringify(item) === JSON.stringify(action.payload)
-			// );
-			// if (existed) existed.qty++;
-			// else state.push(action.payload);
+			const { id, size } = action.payload;
+			const exist = state.find((item) => item.id === id && item.size === size);
+			if (exist) {
+				exist.qty++;
+			} else {
+				state.push({ ...action.payload, qty: 1 });
+			}
+		},
+		edit(state, action) {
+			const { idx, size, qty } = action.payload;
+			if (size) {
+				state[idx] = { ...state[idx], size: size };
+			} else if (qty) {
+				state[idx] = { ...state[idx], qty: qty };
+			}
+		},
+		remove(state, action) {
+			state.splice(action.payload, 1);
 		},
 	},
 	extraReducers: (builder) => {
@@ -32,5 +46,7 @@ const bagSlice = createSlice({
 	},
 });
 
-export const { add } = bagSlice.actions;
+export const { add, edit, remove } = bagSlice.actions;
+export const bagSelector = (state: AppState) => state.bag;
+export const selectBag = createSelector(bagSelector, (s) => s);
 export default bagSlice.reducer;

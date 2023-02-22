@@ -1,5 +1,5 @@
-import MainImg from "@/components/MainImg";
-import Products from "@/components/Products";
+import MainImg from "@/components/main/MainImg";
+import Products from "@/components/products";
 import { filterOn } from "@/redux/modules/listSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";

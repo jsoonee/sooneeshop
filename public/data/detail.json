@@ -2,7 +2,7 @@
 	"detail": [
 		{
 			"id": "0",
-			"sizes": "free",
+			"sizes": ["Free"],
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non vestibulum sapien. Cras et venenatis dui, sed imperdiet justo. Ut dui sem, egestas sit amet porttitor ut, feugiat vitae nulla. Praesent eu elit sit amet ligula interdum porttitor ut nec massa. Nullam vestibulum erat maximus fringilla scelerisque. Proin quis nisl tempor eros faucibus rhoncus. In consequat sit amet erat ut imperdiet."
 		},
 		{
@@ -72,7 +72,7 @@
 		},
 		{
 			"id": "14",
-			"sizes": "free",
+			"sizes": ["Free"],
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non vestibulum sapien. Cras et venenatis dui, sed imperdiet justo. Ut dui sem, egestas sit amet porttitor ut, feugiat vitae nulla. Praesent eu elit sit amet ligula interdum porttitor ut nec massa. Nullam vestibulum erat maximus fringilla scelerisque. Proin quis nisl tempor eros faucibus rhoncus. In consequat sit amet erat ut imperdiet."
 		},
 		{
@@ -97,7 +97,7 @@
 		},
 		{
 			"id": "19",
-			"sizes": "free",
+			"sizes": ["Free"],
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non vestibulum sapien. Cras et venenatis dui, sed imperdiet justo. Ut dui sem, egestas sit amet porttitor ut, feugiat vitae nulla. Praesent eu elit sit amet ligula interdum porttitor ut nec massa. Nullam vestibulum erat maximus fringilla scelerisque. Proin quis nisl tempor eros faucibus rhoncus. In consequat sit amet erat ut imperdiet."
 		}
 	]

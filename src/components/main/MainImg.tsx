@@ -21,7 +21,7 @@ const MainImg = () => {
 	return (
 		<Wrapper>
 			<img
-				srcSet="images/main-720w.webp 720w, images/main-1200w.webp 1200w"
+				srcSet="/images/main-720w.webp 720w, /images/main-1200w.webp 1200w"
 				alt="main image"
 			/>
 		</Wrapper>

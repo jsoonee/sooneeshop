@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ILayout } from "./Layout";
+import { ILayout } from "../Layout";
 
 const Wrapper = styled.main`
 	display: flex;
@@ -7,6 +7,7 @@ const Wrapper = styled.main`
 	width: 100%;
 	min-height: calc(100vh - 175px);
 	font-weight: 300;
+	padding-bottom: 5rem;
 `;
 
 const Flex = styled.div`

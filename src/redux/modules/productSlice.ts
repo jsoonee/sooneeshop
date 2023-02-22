@@ -1,22 +1,21 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { HYDRATE } from "next-redux-wrapper";
 
 interface IDetail {
 	id: string;
-	sizes: string | Array<string>;
+	sizes: Array<string>;
 	desc: string;
 }
 
-interface IState {
+export interface IProduct {
 	data: IDetail[];
 	detail: IDetail | undefined;
 }
 
-const initialState: IState = {
+export const initialState: IProduct = {
 	data: [],
 	detail: {
 		id: "",
-		sizes: "",
+		sizes: ["Free"],
 		desc: "",
 	},
 };
@@ -38,7 +37,7 @@ const productSlice = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchDetail.fulfilled, (state, { payload }) => {
-			state = payload.detail;
+			state.data = payload.detail;
 		});
 	},
 });

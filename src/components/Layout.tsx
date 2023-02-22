@@ -5,9 +5,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { selectTheme } from "@/redux/modules/themeSlice";
 import { lightTheme, darkTheme } from "@/theme/theme";
 
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
+import Header from "./header";
+import Main from "./main";
+import Footer from "./footer";
 
 export interface ILayout {
 	children: ReactNode;

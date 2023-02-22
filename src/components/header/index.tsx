@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
-import Bag from "./Bag";
+import BagIcon from "./BagIcon";
 import { useSelector } from "react-redux";
 import { selectTheme } from "@/redux/modules/themeSlice";
-import { useRouter } from "next/router";
 
 const Wrapper = styled.header`
 	display: flex;
@@ -37,7 +36,6 @@ const Menu = styled.div`
 
 const Header = () => {
 	const { isDark } = useSelector(selectTheme);
-	const router = useRouter();
 	return (
 		<Wrapper>
 			<Container>
@@ -46,7 +44,7 @@ const Header = () => {
 				</Logo>
 				<Menu>
 					<ThemeToggle />
-					<Bag />
+					<BagIcon />
 				</Menu>
 			</Container>
 		</Wrapper>

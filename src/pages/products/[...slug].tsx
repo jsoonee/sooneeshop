@@ -1,11 +1,7 @@
-import Detail from "@/components/Detail";
-import { useRouter } from "next/router";
+import Detail from "@/components/detail";
 
 const DetailPage = () => {
-	const router = useRouter();
-	const slug = router.query.slug;
-	const pid = slug ? slug[1] : "";
-	return <Detail pid={pid} />;
+	return <Detail />;
 };
 
 export default DetailPage;

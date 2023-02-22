@@ -7,8 +7,9 @@ const Wrapper = styled.div`
 `;
 const Top = styled.div`
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
-	padding: 2rem;
+	padding: 2rem 2rem;
 	@media screen and (max-width: 480px) {
 		padding: 2rem 1rem;
 	}
@@ -17,7 +18,7 @@ const Top = styled.div`
 		flex-direction: column;
 	}
 `;
-const Title = styled.h1`
+export const Title = styled.h1`
 	font-weight: 300;
 	font-size: 1.5rem;
 	text-align: center;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectTheme } from "@/redux/modules/themeSlice";
 import { selectList } from "@/redux/modules/listSlice";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
@@ -11,7 +11,6 @@ const Wrapper = styled.div`
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	height: 40px;
 `;
 const Icon = styled.div`
 	display: flex;
@@ -20,7 +19,6 @@ const Icon = styled.div`
 `;
 const Cats = styled.div`
 	display: flex;
-	height: 31px;
 	flex-flow: row wrap;
 	margin-left: 1rem;
 	justify-content: center;
@@ -31,7 +29,8 @@ const Cats = styled.div`
 `;
 const Cat = styled.div<{ isActive: boolean; isDark: boolean }>`
 	font-size: 1.1rem;
-	margin: 0 0.7rem;
+	margin: 0.2rem 0.7rem;
+	height: 28px;
 	color: ${({ isActive, isDark }) =>
 		isActive ? (isDark ? "#ccbbaa" : "#887755") : "inherit"};
 	border-bottom: ${({ isActive, isDark }) =>
@@ -114,7 +113,9 @@ const Filter = () => {
 						isDark={isDark}
 						onClick={() => onCatClick(cat)}
 					>
-						<Link href={cat === active ? `/` : `/${cat}`}>{cat}</Link>
+						<Link href={cat === active ? `/` : `/cat/${cat}`} scroll={false}>
+							{cat}
+						</Link>
 					</Cat>
 				))}
 			</Cats>

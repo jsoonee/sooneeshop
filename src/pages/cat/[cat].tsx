@@ -1,26 +1,10 @@
 import { useEffect } from "react";
-import { cats } from "@/components/Filter";
-import MainImg from "@/components/MainImg";
-import Products from "@/components/Products";
+import { cats } from "@/components/products/Filter";
+import MainImg from "@/components/main/MainImg";
+import Products from "@/components/products";
 import { GetStaticPaths, GetStaticPropsContext } from "next";
 import { useDispatch } from "react-redux";
 import { filterOn } from "@/redux/modules/listSlice";
-
-// const Cat = ({ cat }: any) => {
-// 	console.log(cat);
-// 	const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-// 	const products = useSelector(listSelector);
-// 	useEffect(() => {
-// 		if (!products) dispatch(fetchAll);
-// 		dispatch(filterOn(cat));
-// 	}, []);
-// 	return (
-// 		<>
-// 			<MainImg />
-// 			<Products />
-// 		</>
-// 	);
-// };
 
 const Cat = ({ cat }: any) => {
 	const dispatch = useDispatch();
@@ -35,8 +19,6 @@ const Cat = ({ cat }: any) => {
 		</>
 	);
 };
-
-// export { default } from ".";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = cats.map((cat) => ({
