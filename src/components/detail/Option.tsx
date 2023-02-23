@@ -9,7 +9,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
-import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
@@ -36,6 +36,7 @@ const AlertWrap = styled.div`
 	width: 100%;
 	position: fixed;
 	top: 80px;
+	left: 0;
 	display: flex;
 	justify-content: center;
 `;
@@ -44,7 +45,7 @@ interface IOption {
 	id: string;
 	name: string;
 	cat: string;
-	price: string;
+	price: number;
 	sizes: string[];
 }
 
@@ -106,17 +107,7 @@ const Option = ({ item }: { item: IOption }) => {
 	return (
 		<Wrapper>
 			<FormControl sx={{ width: "100%" }} onChange={handleOnChange}>
-				<SizeLabel
-					sx={{
-						color: error
-							? theme.palette.error.main
-							: size
-							? theme.palette.primary.main
-							: "unset",
-					}}
-				>
-					Select Size
-				</SizeLabel>
+				<SizeLabel error={error}>Select Size</SizeLabel>
 				<RadioWrap error={error} theme={theme}>
 					<RadioGroup name="size">
 						{sizes.map((value, idx) => (
@@ -131,7 +122,7 @@ const Option = ({ item }: { item: IOption }) => {
 				</RadioWrap>
 				<BtnStyle
 					variant="contained"
-					startIcon={<AddCircleOutlineOutlinedIcon />}
+					startIcon={<AddCircleOutlineIcon />}
 					onClick={handleBtnClick}
 				>
 					ADD TO BAG

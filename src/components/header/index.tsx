@@ -18,20 +18,25 @@ const Container = styled.div`
 	max-width: 1200px;
 	width: 100%;
 	height: 75px;
+	padding: 0 1rem 0 2rem;
+	@media screen and (max-width: 480px) {
+		padding: 0 0 0 15px;
+	}
 `;
 
 const Logo = styled.div<{ isDark: boolean }>`
 	font-family: "Lora", serif;
 	font-size: 1.7rem;
-	margin-left: 2rem;
 	:hover {
 		color: ${({ isDark }) => (isDark ? "#ccbbaa" : "#947d65")};
+	}
+	@media screen and (max-width: 480px) {
+		font-size: 1.4rem;
 	}
 `;
 
 const Menu = styled.div`
 	display: flex;
-	margin-right: 2rem;
 `;
 
 const Header = () => {

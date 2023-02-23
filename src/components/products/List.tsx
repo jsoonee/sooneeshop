@@ -61,7 +61,7 @@ const List = () => {
 								/>
 							</Container>
 							<div>{name}</div>
-							<div>₩{(+price).toLocaleString("ko-KR")}</div>
+							<div>₩ {price.toLocaleString("ko-KR")}</div>
 						</Item>
 					</Link>
 				</ItemWrap>

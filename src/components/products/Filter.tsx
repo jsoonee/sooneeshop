@@ -60,42 +60,11 @@ const Filter = () => {
 		}
 	}, [cat]);
 
-	// useEffect(() => {
-	// 	console.log(cat);
-	// 	if (cat?.length) {
-	// 		setActive(cat);
-	// 		dispatch(filterOn(cat));
-	// 	}
-	// }, []);
-
-	// useEffect(() => {
-	// 	dispatch(fetchAll());
-	// 	if (slug.length) {
-	// 		setActive(slug);
-	// 		dispatch(filterOn(slug));
-	// 	}
-	// }, [slug]);
-	// console.log(active);
-
-	// useEffect(() => {
-	// 	if (active.length) dispatch(filterOn(active));
-	// 	else dispatch(filterOff());
-	// }, [active]);
-
-	// useEffect(() => {
-	// 	if (!router.isReady) return;
-	// 	const query = router.query.cat;
-	// 	console.log(query);
-	// 	if (query) setActive(query);
-	// }, [router.isReady]);
-
 	const onCatClick = (cat: string) => {
 		if (cat === active) {
 			setActive("");
-			// dispatch(filterOff());
 		} else {
 			setActive(cat);
-			// dispatch(filterOn(cat));
 		}
 	};
 

@@ -1,25 +1,41 @@
 import styled from "styled-components";
-import { Title } from "../products";
 import BagList from "./BagList";
+import PriceTable from "./PriceTable";
 
 const Wrapper = styled.div`
 	display: flex;
-	flex-flow: row;
 	justify-content: center;
-`;
-const ListContainer = styled.div`
 	width: 100%;
 `;
+const Container = styled.div`
+	max-width: 1000px;
+	width: 100%;
+	padding: 0 2rem;
+	@media screen and (max-width: 768px) {
+		padding: 0 1rem;
+	}
+`;
+const Title = styled.div`
+	font-weight: 300;
+	font-size: 2rem;
+	text-align: center;
+	margin-top: 2rem;
+`;
 const PriceContainer = styled.div``;
+const EmptyContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
 
 const Bag = () => {
 	return (
 		<Wrapper>
-			<ListContainer>
+			<Container>
 				<Title>my bag</Title>
 				<BagList />
-			</ListContainer>
-			<PriceContainer></PriceContainer>
+				<PriceTable />
+			</Container>
 		</Wrapper>
 	);
 };

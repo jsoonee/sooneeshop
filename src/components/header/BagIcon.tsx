@@ -22,7 +22,7 @@ const BagIcon = () => {
 	const bagList = useSelector(selectBag);
 
 	return (
-		<Link href="/bag">
+		<Link href={bagList.length ? `/bag` : ""}>
 			<IconButton>
 				<BadgeStyle badgeContent={bagList.length || ""} theme={theme}>
 					<ShoppingBagOutlinedIcon sx={{ fontSize: 30 }} />

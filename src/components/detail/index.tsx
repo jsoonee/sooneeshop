@@ -9,6 +9,7 @@ import { fetchDetail } from "@/redux/modules/productSlice";
 import { fetchAll } from "@/redux/modules/listSlice";
 
 import Option from "./Option";
+import Typography from "@mui/material/Typography";
 
 const Wrapper = styled.div`
 	padding: 3rem 1rem;
@@ -50,10 +51,11 @@ const Basic = styled.div`
 const Name = styled.div`
 	font-size: 1.8rem;
 `;
-const Cat = styled.div`
+const Cat = styled(Typography)`
 	font-size: 1.2rem;
 `;
 const Price = styled.div`
+	margin: 1rem 0;
 	font-size: 1.2rem;
 `;
 const Desc = styled.div`
@@ -89,8 +91,8 @@ const Detail = () => {
 					<InfoBox>
 						<Basic>
 							<Name>{itemInfo.name}</Name>
-							<Cat>{itemInfo.cat}</Cat>
-							<Price>₩ {(+itemInfo.price).toLocaleString("ko-KR")}</Price>
+							<Cat color="text.secondary">{itemInfo.cat}</Cat>
+							<Price>₩ {itemInfo.price.toLocaleString("ko-KR")}</Price>
 						</Basic>
 						<Option
 							item={{
