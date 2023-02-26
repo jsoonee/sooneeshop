@@ -5,25 +5,30 @@ import BagIcon from "./BagIcon";
 import { useSelector } from "react-redux";
 import { selectTheme } from "@/redux/modules/themeSlice";
 
-const Wrapper = styled.header`
+const Wrapper = styled.header<{ isDark: boolean }>`
+	position: fixed;
 	display: flex;
 	justify-content: center;
-	width: 100%;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 75px;
+	z-index: 3;
+	background-color: ${({ isDark }) =>
+		isDark ? "rgba(18,18,18,0.9)" : "rgba(255,255,255,0.9)"};
 `;
-
 const Container = styled.div`
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	max-width: 1200px;
 	width: 100%;
-	height: 75px;
-	padding: 0 1rem 0 2rem;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
 	@media screen and (max-width: 480px) {
-		padding: 0 0 0 15px;
+		padding: 0 1rem;
 	}
 `;
-
 const Logo = styled.div<{ isDark: boolean }>`
 	font-family: "Lora", serif;
 	font-size: 1.7rem;
@@ -42,8 +47,8 @@ const Menu = styled.div`
 const Header = () => {
 	const { isDark } = useSelector(selectTheme);
 	return (
-		<Wrapper>
-			<Container>
+		<Wrapper isDark={isDark}>
+			<Container className="header">
 				<Logo isDark={isDark}>
 					<Link href="/">SOONEESHOP</Link>
 				</Logo>

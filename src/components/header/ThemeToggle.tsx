@@ -26,17 +26,15 @@ const ThemeToggle = () => {
 	};
 
 	return (
-		<div onClick={clickToggle}>
-			<Tooltip title="Toggle Theme">
-				<IconButton>
-					{isDark ? (
-						<DarkModeIcon sx={{ fontSize: 30 }} />
-					) : (
-						<LightModeIcon sx={{ fontSize: 30 }} />
-					)}
-				</IconButton>
-			</Tooltip>
-		</div>
+		<Tooltip title="Toggle Theme">
+			<IconButton onClick={clickToggle}>
+				{isDark ? (
+					<DarkModeIcon sx={{ fontSize: 30 }} />
+				) : (
+					<LightModeIcon sx={{ fontSize: 30 }} />
+				)}
+			</IconButton>
+		</Tooltip>
 	);
 };
 

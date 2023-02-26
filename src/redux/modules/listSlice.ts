@@ -23,7 +23,6 @@ interface IListState {
 
 export const fetchAll = createAsyncThunk("product/all", async () => {
 	const res = await fetch("/data/products.json");
-	console.log(res);
 	if (!res.ok) throw new Error("server error");
 	return await res.json();
 });
@@ -35,7 +34,6 @@ const listSlice = createSlice({
 	initialState,
 	reducers: {
 		filterOn(state, action) {
-			console.log("filtering!");
 			if (action.payload === "all") {
 				state.cat = "all";
 				state.filtered = state.all;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { edit, selectBag } from "@/redux/modules/bagSlice";
+import { edit, remove, selectBag } from "@/redux/modules/bagSlice";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Image from "next/image";
@@ -11,6 +11,8 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Link from "next/link";
 import Typography from "@mui/material/Typography";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
 
 const ListStyle = styled(List)`
 	margin-bottom: 2rem;
@@ -25,7 +27,15 @@ const Left = styled.div`
 	display: flex;
 	align-items: center;
 `;
+const Right = styled.div`
+	display: flex;
+	flex-direction: column;
+	svg {
+		display: block;
+	}
+`;
 const ImageContainer = styled.div`
+	position: relative;
 	display: flex;
 	width: 150px;
 	height: 150px;
@@ -45,57 +55,60 @@ const ImageContainer = styled.div`
 	}
 `;
 const Info = styled.div`
+	width: 100%;
 	padding: 0 2rem;
-	@media screen and (max-width: 768px) {
-		padding: 0 1rem;
+	@media screen and (max-width: 480px) {
+		padding: 0 0.5rem;
 	}
 `;
 const Name = styled.div`
 	font-size: 1.2rem;
+	margin-left: 0.3rem;
 	@media screen and (max-width: 768px) {
 		font-size: 1rem;
 	}
 `;
 const Cat = styled(Typography)`
 	font-size: 1.1rem;
+	margin-left: 0.3rem;
 	@media screen and (max-width: 768px) {
 		font-size: 0.9rem;
 	}
 `;
 const Price = styled.div`
 	font-size: 1.1rem;
-	padding: 1rem 0;
 	white-space: nowrap;
+	margin-left: auto;
 	@media screen and (max-width: 768px) {
 		font-size: 1rem;
 	}
 `;
 const Options = styled.div`
 	display: flex;
-	flex-flow: row wrap;
-	margin-top: 1rem;
+	align-items: center;
+	flex-wrap: wrap;
+	> * {
+		margin: 0.3rem;
+	}
+	margin: 0.5rem 0;
+	/* margin-top: 1rem;
 	> * {
 		margin-top: 0.5rem;
-	}
+	} */
 `;
 const Size = styled(FormControl)``;
-const Qty = styled(FormControl)`
-	margin-left: 1rem;
-	@media screen and (max-width: 480px) {
-		margin-left: 0.5rem;
-	}
-`;
+const Qty = styled(FormControl)``;
 
 const BagList = () => {
 	const dispatch = useDispatch();
 	const list = useSelector(selectBag);
-	console.log(list);
 	const handleSizeChange = (e: SelectChangeEvent, idx: number) => {
 		dispatch(edit({ idx, size: e.target.value }));
 	};
 	const handleQtyChange = (e: SelectChangeEvent<number>, idx: number) => {
 		dispatch(edit({ idx, qty: +e.target.value }));
 	};
+
 	return (
 		<ListStyle>
 			{list.map(({ id, name, cat, price, sizes, size, qty }, idx) => (
@@ -105,10 +118,13 @@ const BagList = () => {
 							<Link href={`/products/${name.split(" ").join("-")}/${id}`}>
 								<ImageContainer>
 									<Image
-										src={`/images/${id}-600w.webp`}
+										src={`/images/${id}-150w.webp`}
 										alt={name}
 										fill
 										className="img"
+										sizes="150px"
+										placeholder="blur"
+										blurDataURL={`/images/${id}-150w.webp`}
 									/>
 								</ImageContainer>
 							</Link>
@@ -126,7 +142,6 @@ const BagList = () => {
 											label="Size"
 											onChange={(e) => handleSizeChange(e, idx)}
 											size="small"
-											MenuProps={{ disableScrollLock: true }}
 										>
 											{sizes.map((val, idx) => (
 												<MenuItem key={idx} value={val}>
@@ -151,6 +166,12 @@ const BagList = () => {
 											))}
 										</Select>
 									</Qty>
+									<IconButton
+										sx={{ margin: "0 !important" }}
+										onClick={() => dispatch(remove(idx))}
+									>
+										<DeleteIcon />
+									</IconButton>
 								</Options>
 							</Info>
 						</Left>

@@ -48,11 +48,8 @@ export const cats = ["top", "bottom", "outer", "underwear", "footwear", "acc"];
 const Filter = () => {
 	const [active, setActive] = useState<any>("");
 	const { cat } = useSelector(selectList);
-	console.log(useSelector(selectList));
 	const { isDark } = useSelector(selectTheme);
-	console.log(active);
 	useEffect(() => {
-		console.log("category: " + cat);
 		if (cat === "all") {
 			setActive("");
 		} else {

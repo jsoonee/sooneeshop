@@ -12,12 +12,12 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', '맑은 고딕', 'malgun gothic', 'Apple SD Gothic Neo', 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', 'Droid sans', sans-serif;
     margin: 0;
-    padding: 0 !important;
+    padding: 0;
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
     user-select: none;
-    transition: all 0.5s;
+    transition: background-color 0.5s, color 0.5s;
   }
 
   a {

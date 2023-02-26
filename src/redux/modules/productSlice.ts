@@ -22,7 +22,6 @@ export const initialState: IProduct = {
 
 export const fetchDetail = createAsyncThunk("product/detail", async () => {
 	const res = await fetch("/data/detail.json");
-	console.log(res);
 	if (!res.ok) throw new Error("server error");
 	return await res.json();
 });

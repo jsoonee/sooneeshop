@@ -10,10 +10,10 @@ const Home = () => {
 		dispatch(filterOn("all"));
 	}, []);
 	return (
-		<>
+		<div>
 			<MainImg />
 			<Products />
-		</>
+		</div>
 	);
 };
 

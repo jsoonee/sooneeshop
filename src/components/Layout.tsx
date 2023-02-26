@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,6 +14,16 @@ export interface ILayout {
 	children: ReactNode;
 }
 
+const Wrapper = styled.div`
+	width: 100%;
+	display: flex;
+	justify-content: center;
+`;
+const Container = styled.div`
+	max-width: 1200px;
+	width: 100%;
+`;
+
 const Layout = ({ children }: ILayout) => {
 	const { isIdentified, isDark } = useSelector(selectTheme);
 
@@ -21,9 +32,13 @@ const Layout = ({ children }: ILayout) => {
 			{isIdentified ? (
 				<ThemeProvider theme={isDark ? darkTheme : lightTheme}>
 					<CssBaseline />
-					<Header />
-					<Main>{children}</Main>
-					<Footer />
+					<Wrapper>
+						<Container>
+							<Header />
+							<Main>{children}</Main>
+							<Footer />
+						</Container>
+					</Wrapper>
 				</ThemeProvider>
 			) : (
 				<>

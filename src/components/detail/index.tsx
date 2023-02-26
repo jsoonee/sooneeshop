@@ -12,25 +12,28 @@ import Option from "./Option";
 import Typography from "@mui/material/Typography";
 
 const Wrapper = styled.div`
-	padding: 3rem 1rem;
+	padding: 50px 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	flex-flow: row;
 	@media screen and (max-width: 768px) {
-		padding: 2rem 0.5rem;
+		padding: 2rem 0;
 		flex-flow: column;
 	}
 `;
 const ImgBox = styled.div`
 	min-width: 600px;
+	@media screen and (max-width: 1024px) {
+		min-width: 50%;
+	}
+`;
+const ImgWrap = styled.div`
+	position: relative;
 	.img {
 		display: block;
 		position: relative !important;
 		height: unset !important;
-	}
-	@media screen and (max-width: 1024px) {
-		min-width: 50%;
 	}
 `;
 const InfoBox = styled.div`
@@ -38,11 +41,10 @@ const InfoBox = styled.div`
 	flex-flow: column;
 	padding: 0 2rem;
 	@media screen and (max-width: 768px) {
-		padding: 0;
+		padding: 0 1rem;
 	}
 `;
 const Basic = styled.div`
-	padding: 0 1rem;
 	@media screen and (max-width: 768px) {
 		text-align: center;
 		margin-top: 1rem;
@@ -57,9 +59,10 @@ const Cat = styled(Typography)`
 const Price = styled.div`
 	margin: 1rem 0;
 	font-size: 1.2rem;
+	letter-spacing: 0.5px;
 `;
 const Desc = styled.div`
-	padding: 2rem 1rem;
+	padding: 2rem 0;
 `;
 
 const Detail = () => {
@@ -81,12 +84,17 @@ const Detail = () => {
 			{itemInfo && detail && (
 				<>
 					<ImgBox>
-						<Image
-							src={`/images/${itemInfo.id}-600w.webp`}
-							alt={itemInfo.name + ""}
-							fill
-							className="img"
-						/>
+						<ImgWrap>
+							<Image
+								src={`/images/${itemInfo.id}-600w.webp`}
+								alt={itemInfo.name + ""}
+								fill
+								className="img"
+								sizes="600px"
+								placeholder="blur"
+								blurDataURL={`/images/${itemInfo.id}-600w.webp`}
+							/>
+						</ImgWrap>
 					</ImgBox>
 					<InfoBox>
 						<Basic>

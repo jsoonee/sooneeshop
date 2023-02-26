@@ -3,10 +3,6 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { add, selectBag } from "@/redux/modules/bagSlice";
 import { useTheme } from "@mui/material/styles";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
@@ -16,26 +12,33 @@ import Alert from "@mui/material/Alert";
 const Wrapper = styled.div`
 	margin-top: 2rem;
 `;
-const RadioWrap = styled.div<{ error: boolean; theme: any }>`
-	padding: 0 1rem;
-	border: 1px solid;
-	border-color: ${({ error, theme }) =>
-		error ? theme.palette.error.main : "transparent"};
-	border-radius: 15px;
-	margin: 0.5rem 0;
-`;
 const SizeLabel = styled(FormLabel)`
 	padding: 0 1rem;
 `;
-const BtnStyle = styled(Button)`
+const SizeGrid = styled.div<{ error: boolean; theme: any }>`
+	padding: 1rem;
+	margin: 0.5rem 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 7px;
+	border: 2px solid;
+	border-radius: 15px;
+	border-color: ${({ error, theme }) =>
+		error ? theme.palette.error.main : "transparent"};
+`;
+const SizeBtn = styled(Button)`
+	text-transform: none;
+`;
+const AddBtn = styled(Button)`
 	margin: 1rem;
 	padding: 1rem;
 	border-radius: 30px;
+	width: calc(100% - 2rem);
 `;
 const AlertWrap = styled.div`
 	width: 100%;
 	position: fixed;
-	top: 80px;
+	top: 75px;
 	left: 0;
 	display: flex;
 	justify-content: center;
@@ -58,10 +61,13 @@ const Option = ({ item }: { item: IOption }) => {
 	const dispatch = useDispatch();
 	const bagList = useSelector(selectBag);
 	const theme = useTheme();
-	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		if (error) setOpen(false);
-		setSize(e.target.value);
-		setError(false);
+
+	const handleSizeClick = (value: string) => {
+		if (value !== size) {
+			setOpen(false);
+			setSize(value);
+			setError(false);
+		}
 	};
 
 	const handleClose = (
@@ -106,39 +112,41 @@ const Option = ({ item }: { item: IOption }) => {
 
 	return (
 		<Wrapper>
-			<FormControl sx={{ width: "100%" }} onChange={handleOnChange}>
-				<SizeLabel error={error}>Select Size</SizeLabel>
-				<RadioWrap error={error} theme={theme}>
-					<RadioGroup name="size">
-						{sizes.map((value, idx) => (
-							<FormControlLabel
-								key={idx}
-								value={value}
-								control={<Radio />}
-								label={value}
-							/>
-						))}
-					</RadioGroup>
-				</RadioWrap>
-				<BtnStyle
-					variant="contained"
-					startIcon={<AddCircleOutlineIcon />}
-					onClick={handleBtnClick}
-				>
-					ADD TO BAG
-				</BtnStyle>
-				<Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-					<AlertWrap>
-						<Alert
-							severity={error ? "error" : "success"}
-							onClose={handleClose}
-							sx={{ border: "1px solid " + theme.palette.divider }}
-						>
-							{message}
-						</Alert>
-					</AlertWrap>
-				</Snackbar>
-			</FormControl>
+			<SizeLabel error={error}>Select Size</SizeLabel>
+			<SizeGrid error={error} theme={theme}>
+				{sizes.map((value, idx) => (
+					<SizeBtn
+						key={idx}
+						variant="outlined"
+						size="large"
+						color="basic"
+						sx={{
+							borderColor: value === size ? "text.primary" : "divider",
+						}}
+						onClick={() => handleSizeClick(value)}
+					>
+						{value}
+					</SizeBtn>
+				))}
+			</SizeGrid>
+			<AddBtn
+				variant="contained"
+				startIcon={<AddCircleOutlineIcon />}
+				onClick={handleBtnClick}
+			>
+				ADD TO BAG
+			</AddBtn>
+			<Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+				<AlertWrap>
+					<Alert
+						severity={error ? "error" : "success"}
+						onClose={handleClose}
+						sx={{ border: "1px solid " + theme.palette.divider }}
+					>
+						{message}
+					</Alert>
+				</AlertWrap>
+			</Snackbar>
 		</Wrapper>
 	);
 };

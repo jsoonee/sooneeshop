@@ -13,10 +13,10 @@ const Cat = ({ cat }: any) => {
 	}, [cat]);
 	console.log(cat);
 	return (
-		<>
+		<div>
 			<MainImg />
 			<Products />
-		</>
+		</div>
 	);
 };
 

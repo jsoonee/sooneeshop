@@ -12,7 +12,6 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 const Wrapper = styled.div`
 	display: flex;
@@ -44,16 +43,6 @@ const Price = styled.div`
 const Total = styled(Price)`
 	font-size: 1.2rem;
 	font-weight: bold;
-`;
-const BtnWrapper = styled.div`
-	display: flex;
-	justify-content: center;
-`;
-const BtnStyle = styled(Button)`
-	padding: 1rem;
-	margin: 1rem;
-	border-radius: 30px;
-	width: 100%;
 `;
 
 interface IPromo {
@@ -148,11 +137,6 @@ const PriceTable = () => {
 					</div>
 				</Total>
 			</PriceList>
-			<BtnWrapper>
-				<BtnStyle variant="contained" startIcon={<CheckCircleOutlineIcon />}>
-					Proceed to Checkout
-				</BtnStyle>
-			</BtnWrapper>
 		</div>
 	);
 };

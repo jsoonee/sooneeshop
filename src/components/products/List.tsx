@@ -6,13 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { ThunkDispatch } from "@reduxjs/toolkit";
 import { AppState } from "@/redux/store";
 import { fetchAll } from "@/redux/modules/listSlice";
+import Box from "@mui/material/Box";
 
 const Grid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(3, minmax(270px, 33%));
 	grid-gap: 2rem;
 	padding: 0 2rem;
-	margin-bottom: 2rem;
 	@media screen and (max-width: 1024px) {
 		grid-template-columns: repeat(2, calc(50% - 0.5rem));
 		grid-gap: 1rem;
@@ -22,10 +22,16 @@ const Grid = styled.div`
 const ItemWrap = styled.div`
 	display: inline-block;
 `;
-const Item = styled.div`
+const Item = styled(Box)`
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+	:hover {
+		.img {
+			transform: scale(1.03);
+			transition: 0.3s;
+		}
+	}
 `;
 const Container = styled.div`
 	display: inline-block;
@@ -36,32 +42,43 @@ const Container = styled.div`
 		height: unset !important;
 	}
 `;
+const Name = styled.div`
+	margin: 0.5rem 0;
+`;
+const Price = styled.div`
+	letter-spacing: 0.3px;
+`;
 
 const List = () => {
 	const products = useSelector((state: AppState) => state.list.filtered);
 	const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
 	useEffect(() => {
-		console.log("fetching");
 		if (!products.length) dispatch(fetchAll());
 	}, []);
-	console.log(products);
+
 	return (
 		<Grid>
 			{products.map(({ id, name, price }) => (
 				<ItemWrap key={id}>
 					<Link href={`/products/${name.split(" ").join("-")}/${id}`}>
-						<Item>
+						<Item
+							sx={{
+								"&:hover": {
+									backgroundColor: "action.hover",
+								},
+							}}
+						>
 							<Container>
 								<Image
-									src={`/images/${id}-600w.webp`}
+									src={`/images/${id}-360w.webp`}
 									alt={name}
 									fill
 									className="img"
 									sizes="50vw"
 								/>
 							</Container>
-							<div>{name}</div>
-							<div>₩ {price.toLocaleString("ko-KR")}</div>
+							<Name>{name}</Name>
+							<Price>₩ {price.toLocaleString("ko-KR")}</Price>
 						</Item>
 					</Link>
 				</ItemWrap>
