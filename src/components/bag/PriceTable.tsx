@@ -55,7 +55,7 @@ const PriceTable = () => {
 	const [codes, setCodes] = useState<string>("");
 	const [error, setError] = useState<boolean>(false);
 	const [applied, setApplied] = useState<IPromo | null>(null);
-	const bag = useSelector(selectBag);
+	const bag = useSelector(selectBag).bag;
 	const subtotal = bag.reduce((acc, { price, qty }) => acc + +price * qty, 0);
 
 	const handleSubmit = (e: React.FormEvent) => {

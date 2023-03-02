@@ -3,13 +3,17 @@ import { cats } from "@/components/products/Filter";
 import MainImg from "@/components/main/MainImg";
 import Products from "@/components/products";
 import { GetStaticPaths, GetStaticPropsContext } from "next";
-import { useDispatch } from "react-redux";
-import { filterOn } from "@/redux/modules/listSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { filterOn, selectList } from "@/redux/modules/listSlice";
 
 const Cat = ({ cat }: any) => {
+	const puppy = useSelector(selectList).cat;
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(filterOn(cat));
+		if (cat !== puppy) {
+			dispatch(filterOn(cat));
+			// console.log("중복제거");
+		}
 	}, [cat]);
 	console.log(cat);
 	return (

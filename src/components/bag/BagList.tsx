@@ -101,12 +101,17 @@ const Qty = styled(FormControl)``;
 
 const BagList = () => {
 	const dispatch = useDispatch();
-	const list = useSelector(selectBag);
-	const handleSizeChange = (e: SelectChangeEvent, idx: number) => {
-		dispatch(edit({ idx, size: e.target.value }));
+	const list = useSelector(selectBag).bag;
+	const handleSizeChange = (e: SelectChangeEvent, idx: number, id: string) => {
+		console.log(idx + "" + id + "" + e.target.value);
+		dispatch(edit({ idx, id, size: e.target.value }));
 	};
-	const handleQtyChange = (e: SelectChangeEvent<number>, idx: number) => {
-		dispatch(edit({ idx, qty: +e.target.value }));
+	const handleQtyChange = (
+		e: SelectChangeEvent<number>,
+		idx: number,
+		id: string
+	) => {
+		dispatch(edit({ idx, id, qty: +e.target.value }));
 	};
 
 	return (
@@ -140,7 +145,7 @@ const BagList = () => {
 											autoWidth
 											value={size}
 											label="Size"
-											onChange={(e) => handleSizeChange(e, idx)}
+											onChange={(e) => handleSizeChange(e, idx, id)}
 											size="small"
 										>
 											{sizes.map((val, idx) => (
@@ -157,7 +162,7 @@ const BagList = () => {
 											value={qty}
 											label="Qty"
 											size="small"
-											onChange={(e) => handleQtyChange(e, idx)}
+											onChange={(e) => handleQtyChange(e, idx, id)}
 										>
 											{[...Array(10)].map((_, i) => (
 												<MenuItem key={i + 1} value={i + 1}>

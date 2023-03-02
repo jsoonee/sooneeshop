@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectTheme } from "@/redux/modules/themeSlice";
-import { selectList } from "@/redux/modules/listSlice";
+import { selectList, filterOn } from "@/redux/modules/listSlice";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Wrapper = styled.div`
 	display: flex;
@@ -46,11 +47,20 @@ const Cat = styled.div<{ isActive: boolean; isDark: boolean }>`
 export const cats = ["top", "bottom", "outer", "underwear", "footwear", "acc"];
 
 const Filter = () => {
-	const [active, setActive] = useState<any>("");
-	const { cat } = useSelector(selectList);
+	const [active, setActive] = useState<string>("");
 	const { isDark } = useSelector(selectTheme);
+	const dispatch = useDispatch();
+	const { cat } = useSelector(selectList);
+	// console.log(cat);
+	// const router = useRouter();
+	// console.log(router.query);
+	// const queryCat =
+	// 	!router.query.cat || typeof router.query.cat !== "string"
+	// 		? "all"
+	// 		: router.query.cat;
 	useEffect(() => {
 		if (cat === "all") {
+			// dispatch(filterOn("all"));
 			setActive("");
 		} else {
 			setActive(cat);
@@ -59,9 +69,13 @@ const Filter = () => {
 
 	const onCatClick = (cat: string) => {
 		if (cat === active) {
+			// router.push(`/`, undefined, { scroll: false });
 			setActive("");
+			// dispatch(filterOn("all"));
 		} else {
+			// router.push(`/?cat=${cat}`, `/cat/${cat}`, { scroll: false });
 			setActive(cat);
+			// dispatch(filterOn(cat));
 		}
 	};
 

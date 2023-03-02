@@ -8,19 +8,12 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { setItem } from "@/utils/localStorage";
 
 const ThemeToggle = () => {
-	const { isIdentified, isDark } = useSelector(selectTheme);
+	const { isDark } = useSelector(selectTheme);
 	const dispatch = useDispatch();
-
-	useEffect(() => {
-		if (!isIdentified) {
-			const rootTheme = document.documentElement.getAttribute("theme");
-			const isRootDark = rootTheme === "dark" ? true : false;
-			dispatch(toggleTheme(isRootDark));
-		}
-	}, []);
 
 	const clickToggle = () => {
 		const theme = isDark ? "light" : "dark";
+		document.documentElement.setAttribute("theme", theme);
 		setItem("theme", theme);
 		dispatch(toggleTheme(!isDark));
 	};

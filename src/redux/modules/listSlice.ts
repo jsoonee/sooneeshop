@@ -27,7 +27,7 @@ export const fetchAll = createAsyncThunk("product/all", async () => {
 	return await res.json();
 });
 
-const initialState: IList = { cat: "all", all: [], filtered: [] };
+const initialState: IList = { cat: "", all: [], filtered: [] };
 
 const listSlice = createSlice({
 	name: "list",

@@ -24,7 +24,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
-  
+
+  header {
+    background-color: var(--bg-header);
+  }
 `;
 
 export default GlobalStyle;

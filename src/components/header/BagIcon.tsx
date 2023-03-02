@@ -23,7 +23,7 @@ const BadgeStyle = styled(Badge)<{ theme: any }>`
 const BagIcon = () => {
 	const [open, setOpen] = useState<boolean>(false);
 	const theme = useTheme();
-	const bagList = useSelector(selectBag);
+	const bagList = useSelector(selectBag).bag;
 	return bagList.length ? (
 		<Link href="/bag">
 			<IconButton>

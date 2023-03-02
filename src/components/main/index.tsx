@@ -8,6 +8,10 @@ const Wrapper = styled.main`
 	min-height: calc(100vh - 100px);
 	font-weight: 300;
 	padding: 75px 0;
+	@media screen and (max-width: 480px) {
+		padding: 60px 0;
+		min-height: calc(100vh - 175px);
+	}
 `;
 
 const Main = ({ children }: ILayout) => {

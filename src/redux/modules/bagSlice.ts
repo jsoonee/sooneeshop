@@ -12,7 +12,7 @@ interface IBagItem {
 	qty: number;
 }
 
-const initialState: IBagItem[] = [];
+const initialState: { code: string; bag: IBagItem[] } = { code: "", bag: [] };
 
 const bagSlice = createSlice({
 	name: "bag",
@@ -20,23 +20,48 @@ const bagSlice = createSlice({
 	reducers: {
 		add(state, action) {
 			const { id, size } = action.payload;
-			const exist = state.find((item) => item.id === id && item.size === size);
+			const exist = state.bag.find(
+				(item) => item.id === id && item.size === size
+			);
 			if (exist) {
+				// if (exist.qty >= 10) {
+				// 	state.code = "MAXIMUM_QTY";
+				// } else {
+				// 	exist.qty++;
+				// }
 				exist.qty++;
 			} else {
-				state.push({ ...action.payload, qty: 1 });
+				state.bag.push({ ...action.payload, qty: 1 });
 			}
 		},
 		edit(state, action) {
-			const { idx, size, qty } = action.payload;
+			const { bag } = state;
+			const { idx, id, size, qty } = action.payload;
 			if (size) {
-				state[idx] = { ...state[idx], size: size };
+				const existIndex = bag.findIndex(
+					(item, index) => idx !== index && item.id === id && item.size === size
+				);
+				if (existIndex >= 0) {
+					const nums = [idx, existIndex];
+					const upper = Math.min(...nums),
+						lower = Math.max(...nums);
+					let sum = bag[upper].qty + bag[lower].qty;
+					if (sum > 10) sum = 10;
+					bag[upper] = {
+						...bag[upper],
+						size: size,
+						qty: sum,
+					};
+					bag.splice(lower, 1);
+				} else {
+					bag[idx] = { ...bag[idx], size: size };
+				}
 			} else if (qty) {
-				state[idx] = { ...state[idx], qty: qty };
+				bag[idx] = { ...bag[idx], qty: qty };
 			}
 		},
 		remove(state, action) {
-			state.splice(action.payload, 1);
+			state.bag.splice(action.payload, 1);
 		},
 	},
 	extraReducers: (builder) => {

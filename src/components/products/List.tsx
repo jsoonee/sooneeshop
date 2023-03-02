@@ -28,7 +28,7 @@ const Item = styled(Box)`
 	text-align: center;
 	:hover {
 		.img {
-			transform: scale(1.03);
+			transform: scale(1.02);
 			transition: 0.3s;
 		}
 	}
@@ -61,13 +61,7 @@ const List = () => {
 			{products.map(({ id, name, price }) => (
 				<ItemWrap key={id}>
 					<Link href={`/products/${name.split(" ").join("-")}/${id}`}>
-						<Item
-							sx={{
-								"&:hover": {
-									backgroundColor: "action.hover",
-								},
-							}}
-						>
+						<Item>
 							<Container>
 								<Image
 									src={`/images/${id}-360w.webp`}

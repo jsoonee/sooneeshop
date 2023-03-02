@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { selectBag } from "@/redux/modules/bagSlice";
@@ -43,9 +44,13 @@ const Empty = styled(Wrapper)`
 	font-size: 2rem;
 	text-align: center;
 `;
+const BackButton = styled(Button)`
+	margin: 1rem;
+	padding: 1rem 2rem;
+`;
 
 const Bag = () => {
-	const bag = useSelector(selectBag);
+	const bag = useSelector(selectBag).bag;
 	return bag.length ? (
 		<Wrapper>
 			<Container>
@@ -63,6 +68,11 @@ const Bag = () => {
 		<Empty>
 			<UpcomingOutlinedIcon sx={{ fontSize: "10rem" }} />
 			<div>Your bag is empty..</div>
+			<Link href="/">
+				<BackButton variant="contained" size="large">
+					Shop now
+				</BackButton>
+			</Link>
 		</Empty>
 	);
 };

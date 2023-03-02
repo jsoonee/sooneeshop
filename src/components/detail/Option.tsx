@@ -59,7 +59,7 @@ const Option = ({ item }: { item: IOption }) => {
 	const [error, setError] = useState<boolean>(false);
 	const [message, setMessage] = useState<string>("");
 	const dispatch = useDispatch();
-	const bagList = useSelector(selectBag);
+	const bagList = useSelector(selectBag).bag;
 	const theme = useTheme();
 
 	const handleSizeClick = (value: string) => {
@@ -92,12 +92,8 @@ const Option = ({ item }: { item: IOption }) => {
 			} else {
 				dispatch(
 					add({
-						id: id,
-						name: name,
-						cat: cat,
-						price: price,
-						sizes: sizes,
-						size: size,
+						...item,
+						size,
 					})
 				);
 				setMessage("Product successfully added to your bag.");

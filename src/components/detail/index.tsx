@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 	justify-content: center;
 	flex-flow: row;
 	@media screen and (max-width: 768px) {
-		padding: 2rem 0;
+		padding: 0;
 		flex-flow: column;
 	}
 `;
